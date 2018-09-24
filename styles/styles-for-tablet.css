@@ -1,4 +1,4 @@
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 769px) and (max-width: 992px) {
 
     /*HEADER WRAPPER*/
     .header-wrapper {
@@ -25,6 +25,7 @@
 
     .nav a {
         font-size: 20px;
+        color: green;
     }
 
     .header-images {
@@ -57,10 +58,6 @@
         border-radius: 35px;
         font-size: 17px;
         padding: 8px 20px 8px 20px;
-    }
-
-    .nav a {
-        color: white;
     }
 
     /*--------*/
