@@ -8,9 +8,27 @@ $(document).on('click', 'a[href^="#"]', function (event) {
     }, 500);
 });
 
+// let supportWrapper = $("div.support-wrapper");
+// const wrapperHeightOld = supportWrapper.height();
+
 $("div.question-pair").click(
     function (event) {
-        $(event.currentTarget).find("div.answer").slideToggle(300);
+        let oldActive = $("div.active-question");
+        let oldAnswer = oldActive.find("div.answer");
+        let newActive = $(event.currentTarget);
+        if (!oldActive.is(newActive)) {
+            oldActive.removeClass("active-question");
+            oldAnswer.slideToggle(300);
+            // supportWrapper.height(wrapperHeightOld);
+            let newAnswer = newActive.find("div.answer");
+            newAnswer.slideToggle(300);
+            // supportWrapper.height(wrapperHeightOld + newAnswer.height());
+            newActive.addClass("active-question");
+        } else {
+            oldActive.removeClass("active-question");
+            oldAnswer.slideToggle(300);
+            // supportWrapper.height(wrapperHeightOld);
+        }
         return false;
     }
 );
