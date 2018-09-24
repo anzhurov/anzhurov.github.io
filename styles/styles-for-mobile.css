@@ -2,7 +2,7 @@
 
     /*HEADER WRAPPER*/
     .header-wrapper {
-        height: 300px;
+        height: 350px;
     }
 
     header {
@@ -140,7 +140,7 @@
     }
 
     .footerbar-block p {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     /*--------*/
