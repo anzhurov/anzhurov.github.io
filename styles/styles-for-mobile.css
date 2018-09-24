@@ -67,7 +67,7 @@
 
     /*БРОСАЙ ВЫЗОВ*/
     .challenge-wrapper {
-        height: 900px;
+        height: 400px;
     }
 
     .challenge-title {
@@ -83,12 +83,12 @@
     }
 
     .challenge-img {
-        padding-top: 40px;
-        padding-right: 40px;
+        padding-top: 400px;
+        float: left;
     }
 
     .challenge-img img {
-        width: 350px;
+        width: 150px;
     }
     /*---------*/
 }

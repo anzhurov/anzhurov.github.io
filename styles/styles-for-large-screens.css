@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px), (max-width: 992px) {
+@media screen and (max-width: 770px), (max-width: 992px) {
 
     /*HEADER WRAPPER*/
     .header-wrapper {
@@ -64,4 +64,31 @@
     }
 
     /*--------*/
+
+    /*БРОСАЙ ВЫЗОВ*/
+    .challenge-wrapper {
+        height: 900px;
+    }
+
+    .challenge-title {
+        padding-top: 5px;
+    }
+
+    .challenge-title h3 {
+        font-size: 25px;
+    }
+
+    .challenge-text {
+        font-size: 14px;
+    }
+
+    .challenge-img {
+        padding-top: 40px;
+        padding-right: 40px;
+    }
+
+    .challenge-img img {
+        width: 450px;
+    }
+    /*---------*/
 }
