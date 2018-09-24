@@ -92,6 +92,43 @@
     /*}*/
     /*---------*/
 
+    /*Программа*/
+    .title-wrapper {
+        padding-top: 0.5%;
+    }
+
+    .title-wrapper h3 {
+        font-size: 22px;
+    }
+
+    .program-wrapper {
+        height: 500px;
+    }
+
+    .program-block {
+        width: 33.33%;
+    }
+
+    .program-block-title {
+        font-size: 19px;
+    }
+
+    .program-block-content {
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .bottom-span {
+        padding-top: 35px;
+    }
+
+    .bottom-span span {
+        font-size: 24px;
+        text-shadow: 2px 2px 4px black, 0 0 2px white;
+    }
+
+    /*-----*/
+
     /*CONTACTS*/
 
     .contacts-wrapper {
