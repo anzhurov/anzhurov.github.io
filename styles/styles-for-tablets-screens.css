@@ -1,17 +1,17 @@
-@media screen and (min-width: 300px) and (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 992px) {
 
     /*HEADER WRAPPER*/
     .header-wrapper {
-        height: 300px;
+        height: 450px;
     }
 
     header {
-        height: 40px;
+        height: 70px;
     }
 
     .logo {
         padding: 5px 0;
-        width: 15px;
+        width: 25px;
     }
 
     .container {
@@ -19,44 +19,44 @@
     }
 
     .nav li {
-        margin-left: 7px;
-        padding-top: 10px;
+        margin-left: 35px;
+        padding-top: 15px;
     }
 
     .nav a {
-        font-size: 13px;
+        font-size: 20px;
     }
 
     .header-images {
-        padding-top: 10px;
+        padding-top: 35px;
     }
 
     .imgheader {
-        width: 30px;
-        height: 30px;
-        padding: 0 15px 0 0;
+        width: 50px;
+        height: 50px;
+        padding: 0 35px 0 0;
     }
 
     .header-wrapper h1 {
-        font-size: 30px;
-        margin: 10px 0 0 0;
+        font-size: 40px;
+        margin: 12px 0 0 0;
         text-shadow: 3px 3px 5px black, 0 0 2px white;
     }
 
     .header-wrapper h4 {
-        font-size: 14px;
+        font-size: 15px;
         margin: 10px 0 25px 0;
     }
 
     .header-button-block {
-        padding-top: 5px;
+        padding-top: 15px;
     }
 
     .blue-button {
-        border: 2px solid #0fe0e0;
-        border-radius: 17px;
-        font-size: 15px;
-        padding: 5px 16px 5px 16px;
+        border: 3px solid #0fe0e0;
+        border-radius: 35px;
+        font-size: 17px;
+        padding: 8px 20px 8px 20px;
     }
 
     .nav a {
@@ -67,7 +67,7 @@
 
     /*БРОСАЙ ВЫЗОВ*/
     /*.challenge-wrapper {*/
-        /*height: 400px;*/
+        /*height: 900px;*/
     /*}*/
 
     /*.challenge-title {*/
@@ -83,12 +83,12 @@
     /*}*/
 
     /*.challenge-img {*/
-        /*padding-top: 400px;*/
-        /*float: left;*/
+        /*padding-top: 40px;*/
+        /*padding-right: 40px;*/
     /*}*/
 
     /*.challenge-img img {*/
-        /*width: 150px;*/
+        /*width: 450px;*/
     /*}*/
     /*---------*/
 
@@ -96,35 +96,35 @@
 
     .contacts-wrapper {
         width: 100%;
-        height: 550px;
+        height: 750px;
     }
 
     .contacts-text {
-        padding-top: 5px;
+        padding-top: 15px;
     }
 
     .contacts-text p {
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .contacts-map iframe {
-        padding-top: 15px;
-        height: 250px;
-        width: 250px;
+        padding-top: 30px;
+        height: 350px;
+        width: 350px;
     }
 
     .sponsors-wrapper {
-        top: 23em;
+        top: 28em;
     }
 
     .sponsors-wrapper img {
-        width: 60px;
-        height: 60px;
-        margin-right: 25px;
+        width: 100px;
+        height: 100px;
+        margin-right: 35px;
     }
 
     .sponsor-images {
-        padding-top: 25px;
+        padding-top: 35px;
     }
 
     /*--------*/
@@ -140,8 +140,6 @@
     }
 
     .footerbar-block p {
-        font-size: 15px;
+        font-size: 18px;
     }
-
-    /*--------*/
 }
