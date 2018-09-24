@@ -1,0 +1,67 @@
+@media screen and (max-width: 380px), (max-width: 750px) {
+
+    /*HEADER WRAPPER*/
+    .header-wrapper {
+        height: 300px;
+    }
+
+    header {
+        height: 40px;
+    }
+
+    .logo {
+        padding: 5px 0;
+        width: 15px;
+    }
+
+    .container {
+        width: 80%;
+    }
+
+    .nav li {
+        margin-left: 25px;
+        padding-top: 10px;
+    }
+
+    .nav a {
+        font-size: 12px;
+    }
+
+    .header-images {
+        padding-top: 15px;
+    }
+
+    .imgheader {
+        width: 30px;
+        height: 30px;
+        padding: 0 15px 0 0;
+    }
+
+    .header-wrapper h1 {
+        font-size: 30px;
+        margin: 10px 0 0 0;
+        text-shadow: 3px 3px 5px black, 0 0 2px white;
+    }
+
+    .header-wrapper h4 {
+        font-size: 10px;
+        margin: 10px 0 25px 0;
+    }
+
+    .header-button-block {
+        padding-top: 15px;
+    }
+
+    .blue-button {
+        border: 2px solid #0fe0e0;
+        border-radius: 17px;
+        font-size: 11px;
+        padding: 5px 17px 5px 17px;
+    }
+
+    .nav a {
+        color: white;
+    }
+
+    /*--------*/
+}

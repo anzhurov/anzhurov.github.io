@@ -1,0 +1,67 @@
+@media screen and (max-width: 750px), (max-width: 1100px) {
+
+    /*HEADER WRAPPER*/
+    .header-wrapper {
+        height: 450px;
+    }
+
+    header {
+        height: 70px;
+    }
+
+    .logo {
+        padding: 5px 0;
+        width: 25px;
+    }
+
+    .container {
+        width: 80%;
+    }
+
+    .nav li {
+        margin-left: 35px;
+        padding-top: 15px;
+    }
+
+    .nav a {
+        font-size: 20px;
+    }
+
+    .header-images {
+        padding-top: 25px;
+    }
+
+    .imgheader {
+        width: 50px;
+        height: 50px;
+        padding: 0 35px 0 0;
+    }
+
+    .header-wrapper h1 {
+        font-size: 40px;
+        margin: 12px 0 0 0;
+        text-shadow: 3px 3px 5px black, 0 0 2px white;
+    }
+
+    .header-wrapper h4 {
+        font-size: 15px;
+        margin: 10px 0 25px 0;
+    }
+
+    .header-button-block {
+        padding-top: 15px;
+    }
+
+    .blue-button {
+        border: 3px solid #0fe0e0;
+        border-radius: 35px;
+        font-size: 17px;
+        padding: 8px 20px 8px 20px;
+    }
+
+    .nav a {
+        color: white;
+    }
+
+    /*--------*/
+}
