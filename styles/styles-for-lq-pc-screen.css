@@ -6,11 +6,11 @@
     }
 
     header {
-        height: 77px;
+        height: 75px;
     }
 
     .logo {
-        padding: 5px 0;
+        padding: 10px 0;
         width: 25px;
     }
 
@@ -33,61 +33,89 @@
     }
 
     .imgheader {
-        width: 75px;
-        height: 75px;
+        width: 90px;
+        height: 90px;
         padding: 0 42px 0 0;
     }
 
     .header-wrapper h1 {
-        font-size: 60px;
+        font-size: 65px;
         margin: 14px 0 0 0;
         text-shadow: 4px 4px 8px black, 0 0 4px white;
     }
 
     .header-wrapper h4 {
-        font-size: 17px;
+        font-size: 20px;
         margin: 15px 0 25px 0;
     }
 
     .header-button-block {
-        padding-top: 18px;
+        padding-top: 25px;
     }
 
     .blue-button {
         border: 3px solid #0fe0e0;
         border-radius: 42px;
-        font-size: 17px;
+        font-size: 25px;
         padding: 10px 26px 10px 26px;
     }
 
     /*--------*/
 
     /*БРОСАЙ ВЫЗОВ*/
-    /*.challenge-wrapper {*/
-    /*height: 900px;*/
-    /*}*/
+    .challenge-wrapper {
+        height: 800px;
+        background: url(../images/layout3.png) no-repeat center bottom;
+    }
 
-    /*.challenge-title {*/
-    /*padding-top: 5px;*/
-    /*}*/
+    .challenge-title {
+        padding-top: 5px;
+    }
 
     /*.challenge-title h3 {*/
     /*font-size: 25px;*/
     /*}*/
 
-    /*.challenge-text {*/
-    /*font-size: 14px;*/
-    /*}*/
+    .challenge-text {
+        font-size: 18px;
+        width: 530px;
+    }
 
-    /*.challenge-img {*/
-    /*padding-top: 40px;*/
-    /*padding-right: 40px;*/
-    /*}*/
+    .challenge-img {
+        padding-top: 130px;
+        padding-right: 10px;
+    }
 
-    /*.challenge-img img {*/
-    /*width: 450px;*/
-    /*}*/
+    .challenge-img img {
+        width: 500px;
+    }
     /*---------*/
+
+    .about-wrapper {
+        height: 1100px;
+        background: url(../images/layout4.png) no-repeat center top;
+    }
+
+    .mainpart-wrapper {
+
+    }
+
+    .mainpart-wrapper ul {
+        font-size: 25px;
+    }
+
+    .mainpart-ul {
+        padding-left: 75px;
+    }
+
+    .mainpart-img {
+        padding-right: 50px;
+        padding-top: 40px;
+    }
+
+    .mainpart-wrapper img {
+        width: 520px;
+    }
 
     /*Программа*/
 
@@ -100,7 +128,7 @@
     }
 
     .program-wrapper {
-        height: 750px;
+        height: 700px;
     }
 
     .program-block {
@@ -166,12 +194,12 @@
 
     /*FOOTER*/
     .footerbar {
-        height: 100px;
+        height: 90px;
     }
 
     .footerbar-block {
         width: 33.33%;
-        height: 100%;
+        height: 90px;
     }
 
     .footerbar-block p {
