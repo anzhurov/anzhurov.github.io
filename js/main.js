@@ -48,12 +48,13 @@ $("div.question-pair").click(
 let controller = {};
 let $window = $(window);
 
-let animateScroll = function(elem, enterTime = 400,
-                             leaveTime = 400,
-                             callbackFunctionEnter = function(){},
-                             callbackFunctionLeave = function(){},
-                             cssBodyEnter = {opacity: 1},
-                             cssBodyLeave = {opacity: 0}) {
+let animateScrollAppearing = function(elem, enterTime = 400,
+                                      leaveTime = 400,
+                                      callbackFunctionEnter = function(){},
+                                      callbackFunctionLeave = function(){},
+                                      cssBodyEnter = {opacity: 1},
+                                      cssBodyLeave = {opacity: 0}) {
+    controller[elem] = false;
     $window.scroll(function () {
         let obj = $(elem);
         if(($window.scrollTop() + $window.height()) > obj.offset().top && !controller[elem]) {
@@ -66,33 +67,83 @@ let animateScroll = function(elem, enterTime = 400,
     })
 };
 
-animateScroll("#challengeH", 800, 100);
+animateScrollAppearing("#challengeH", 800, 100);
 
-animateScroll("#contactsH", 800, 100);
+animateScrollAppearing("#contactsH", 800, 100);
 
-animateScroll("#inf_q", 800, 100);
+animateScrollAppearing("#inf_q", 800, 100);
 
-animateScroll("#ev_place", 800, 100);
+animateScrollAppearing("#ev_place", 800, 100);
 
-animateScroll("#big-text_1", 1500, 100);
+animateScrollAppearing("#big-text_1", 1500, 100);
 
 //About animation
-animateScroll(".about-blocks-wrapper", 2000, 200);
+animateScrollAppearing(".about-blocks-wrapper", 2000, 200);
 
 //About-header animation
-animateScroll("#aboutH", 800, 100);
+animateScrollAppearing("#aboutH", 800, 100);
 
 //Way-header animation
-animateScroll("#wayH", 800, 100);
+animateScrollAppearing("#wayH", 800, 100);
 
-animateScroll("#ul-ways", 2000, 200);
+animateScrollAppearing("#ul-ways", 2000, 200);
 
-animateScroll("#contacts-content", 2000, 200);
+animateScrollAppearing("#contacts-content", 2000, 200);
 
-animateScroll("#programH", 800, 100);
+animateScrollAppearing("#programH", 800, 100);
 
-animateScroll("#programBlock", 2000, 200);
+animateScrollAppearing("#programBlock", 2000, 200);
 
-animateScroll("#helpH", 800, 100);
+animateScrollAppearing("#helpH", 800, 100);
 
-animateScroll("#sup", 1500, 100);
+animateScrollAppearing("#sup", 1500, 100);
+
+let animated = Object.keys(controller);
+
+    for (let i  = 0; i < animated.length; i++) {
+        if (wasScrolled(animated[i])) {
+            $(animated[i]).animate({opacity: 1}, 800);
+            controller[animated[i]] = true
+        }
+    }
+
+function wasScrolled(elem) {
+    return ($window.scrollTop() + $window.height()) > $(elem).offset().top;
+}
+
+// function isScrolledIntoView(elem) {
+//     let docViewTop = $(window).scrollTop();
+//     let docViewBottom = docViewTop + $(window).height();
+//
+//     let elemTop = $(elem).offset().top;
+//     let elemBottom = elemTop + $(elem).height();
+//
+//     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+// }
+//
+// let brightOuter = function bright(elem, dusk, css = {textShadow: "#0fe0e0 1px 1px 15px"}) {
+//     $(elem).animate(css, 500, function () {
+//         dusk(elem, bright);
+//     })
+// }
+//
+// let duskOuter = function dusk(elem, bright, css = {textShadow: "#0fe0e0 1px 1px 1px"}) {
+//     $(elem).animate(css, 500, function () {
+//         bright(elem, dusk);
+//     })
+// }
+//
+// function animateHeader(elem) {
+//     brightOuter(elem, duskOuter);
+// }
+//
+// animateHeader("#contactsH");
+// animateHeader("#challengeH");
+//
+// animateHeader("#aboutH");
+//
+// animateHeader("#wayH");
+//
+// animateHeader("#programH");
+//
+// animateHeader("#helpH");
