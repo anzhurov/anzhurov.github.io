@@ -62,32 +62,28 @@
 
     /*--------*/
 
-    /*БРОСАЙ ВЫЗОВ*/
     .challenge-wrapper {
-        height: 800px;
-        background: url(../images/layout3.png) no-repeat center bottom;
+        height: 880px;
     }
 
     .challenge-title {
-        padding-top: 5px;
+        padding-top: 10px;
     }
 
-    /*.challenge-title h3 {*/
-    /*font-size: 25px;*/
-    /*}*/
+    .challenge-title h3 {
+        font-size: 21px;
+    }
 
     .challenge-text {
-        font-size: 18px;
-        width: 530px;
+        font-size: 17px;
     }
 
     .challenge-img {
-        padding-top: 130px;
-        padding-right: 10px;
+        padding-top: 170px;
     }
 
     .challenge-img img {
-        width: 500px;
+        width: 300px;
     }
     /*---------*/
 
