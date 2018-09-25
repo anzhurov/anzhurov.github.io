@@ -63,30 +63,29 @@
     /*--------*/
 
     /*БРОСАЙ ВЫЗОВ*/
-    /*.challenge-wrapper {*/
-        /*height: 900px;*/
-    /*}*/
+    .challenge-wrapper {
+        height: 830px;
+    }
 
-    /*.challenge-title {*/
-        /*padding-top: 5px;*/
-    /*}*/
+    .challenge-title {
+        padding-top: 5px;
+    }
 
-    /*.challenge-title h3 {*/
-        /*font-size: 25px;*/
-    /*}*/
+    .challenge-title h3 {
+        font-size: 21px;
+    }
 
-    /*.challenge-text {*/
-        /*font-size: 14px;*/
-    /*}*/
+    .challenge-text {
+        font-size: 14px;
+    }
 
-    /*.challenge-img {*/
-        /*padding-top: 40px;*/
-        /*padding-right: 40px;*/
-    /*}*/
+    .challenge-img {
+        padding-top: 160px;
+    }
 
-    /*.challenge-img img {*/
-        /*width: 450px;*/
-    /*}*/
+    .challenge-img img {
+        width: 200px;
+    }
     /*---------*/
 
     /*Программа*/
