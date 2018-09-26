@@ -29,12 +29,12 @@
     }
 
     .header-images {
-        padding-top: 80px;
+        padding-top: 110px;
     }
 
     .imgheader {
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
         padding: 0 35px 0 0;
     }
 
@@ -60,11 +60,17 @@
         padding: 8px 20px 8px 20px;
     }
 
+    .title-wrapper h3 {
+        font-size: 20px;
+    }
+
     /*--------*/
 
     /*БРОСАЙ ВЫЗОВ*/
     .challenge-wrapper {
-        height: 830px;
+        height: 500px;
+        background: url(../images/layout3.png) no-repeat center bottom;
+
     }
 
     .challenge-title {
@@ -76,17 +82,49 @@
     }
 
     .challenge-text {
-        font-size: 14px;
+        font-size: 11px;
     }
 
     .challenge-img {
-        padding-top: 160px;
+        padding-top: 100px;
+        padding-left: 20px;
     }
 
+
     .challenge-img img {
-        width: 200px;
+        width: 250px;
     }
     /*---------*/
+
+    .about-wrapper {
+        height: 730px;
+        background: url(../images/layout4.png) no-repeat center top;
+    }
+
+    .about-block img {
+        height: 80px;
+    }
+
+    .about-block p {
+        font-size: 12px;
+    }
+
+    .mainpart-wrapper ul {
+        font-size: 14px;
+    }
+
+    .mainpart-ul {
+        padding-left: 20px;
+    }
+
+    .mainpart-img {
+        padding-right: 70px;
+        padding-top: 40px;
+    }
+
+    .mainpart-wrapper img {
+        width: 250px;
+    }
 
     /*Программа*/
 
@@ -99,7 +137,7 @@
     }
 
     .program-wrapper {
-        height: 600px;
+        height: 450px;
     }
 
     .program-block {
@@ -107,21 +145,61 @@
     }
 
     .program-block-title {
-        font-size: 22px;
+        font-size: 15px;
     }
 
     .program-block-content {
-        font-size: 16px;
-        line-height: 34px;
+        font-size: 12px;
+        line-height: 25px;
     }
 
     .bottom-span {
-        padding-top: 55px;
+        padding-top: 40px;
     }
 
     .bottom-span span {
-        font-size: 30px;
+        font-size: 22px;
         text-shadow: 3px 3px 6px black, 0 0 3px white;
+    }
+
+    .referees-wrapper {
+        height: 400px;
+    }
+
+    .referees-title-wrapper {
+        font-size: 25px;
+        padding-top: 70px;
+    }
+
+    .referees-blue-button {
+        font-size: 22px;
+        padding: 12px 30px 12px 30px;
+    }
+
+    .referees-button-block {
+        padding-top: 70px;
+    }
+
+    .hands img {
+        width: 250px;
+        top: -30px;
+    }
+
+    .support-wrapper {
+        height: 560px;
+    }
+
+    .support-title-wrapper {
+        font-size: 26px;
+        padding-top: 30px;
+    }
+
+    .textsup {
+        font-size: 12px;
+    }
+
+    .question p {
+        line-height: 25px;
     }
 
     /*-----*/
@@ -130,7 +208,7 @@
 
     .contacts-wrapper {
         width: 100%;
-        height: 750px;
+        height: 600px;
     }
 
     .contacts-text {
@@ -138,13 +216,13 @@
     }
 
     .contacts-text p {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .contacts-map iframe {
         padding-top: 30px;
-        height: 330px;
-        width: 330px;
+        height: 270px;
+        width: 270px;
     }
 
     .sponsors-wrapper {
@@ -152,8 +230,8 @@
     }
 
     .sponsors-wrapper img {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         margin-right: 35px;
     }
 
@@ -168,12 +246,7 @@
         height: 100px;
     }
 
-    .footerbar-block {
-        width: 33.33%;
-        height: 100%;
-    }
-
     .footerbar-block p {
-        font-size: 16px;
+        font-size: 12px;
     }
 }
