@@ -375,7 +375,7 @@ header {
 
 .contacts-text a {
     text-decoration: none;
-
+    color: white;
     font-size: 23px;
     font-family: 'Oswald', sans-serif;
 }
