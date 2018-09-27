@@ -70,7 +70,7 @@
 
     .challenge-wrapper {
         height: 650px;
-        background: url(../images/layout3.png) no-repeat center top;
+        background: url(../images/layout3.png) no-repeat center bottom;
     }
 
     .challenge-title {
