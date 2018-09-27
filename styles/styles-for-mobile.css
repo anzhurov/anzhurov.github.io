@@ -27,6 +27,11 @@
         font-size: 13px;
     }
 
+    .logo {
+        padding: 3px 0;
+        width: 75px;
+    }
+
     .header-images {
         padding-top: 50px;
     }
@@ -152,6 +157,11 @@
         padding-top: 25px;
     }
 
+    .bottom-span a {
+        font-size: 18px;
+        text-shadow: 3px 3px 6px black, 0 0 3px white;
+    }
+
     .bottom-span span {
         font-size: 18px;
         text-shadow: 3px 3px 6px black, 0 0 3px white;
@@ -208,6 +218,10 @@
 
     .contacts-text {
         padding-top: 15px;
+    }
+
+    .contacts-text a {
+        font-size: 12px;
     }
 
     .contacts-text p {

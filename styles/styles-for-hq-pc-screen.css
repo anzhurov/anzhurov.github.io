@@ -34,8 +34,8 @@ header {
 }
 
 .logo {
-    padding: 10px 0;
-    width: 30px;
+    padding: 8px 0;
+    width: 150px;
     float: left;
 }
 
@@ -260,6 +260,14 @@ header {
     text-align: center;
 }
 
+.bottom-span a {
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 5px 5px 10px black, 0 0 5px white;
+}
+
 .bottom-span span {
     color: white;
     font-size: 50px;
@@ -311,8 +319,7 @@ header {
 
 .support-wrapper {
     height: 820px;
-    background:linear-gradient(#13233d, #0fe0e0, #122d59);
-    background-size: cover;
+    background: url(../images/support-bg.png) no-repeat center top;
     opacity:0.95;
     position: relative;
     z-index: 1;
@@ -325,9 +332,6 @@ header {
     padding-top: 30px;
     text-transform: uppercase;
     text-align: center;
-}
-
-.hands {
 }
 
 .hands img {
@@ -343,8 +347,6 @@ header {
 .handright img {
     right: 0;
 }
-
-
 
 .textsup {
     color: white;
@@ -369,6 +371,13 @@ header {
 .contacts-text {
     padding-top: 30px;
     float: left;
+}
+
+.contacts-text a {
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+    font-family: 'Oswald', sans-serif;
 }
 
 .contacts-text p {

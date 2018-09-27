@@ -27,6 +27,11 @@
         font-size: 20px;
     }
 
+    .logo {
+        padding: 8px 0;
+        width: 117px;
+    }
+
     .header-images {
         padding-top: 110px;
     }
@@ -156,6 +161,11 @@
         padding-top: 40px;
     }
 
+    .bottom-span a {
+        font-size: 22px;
+        text-shadow: 3px 3px 6px black, 0 0 3px white;
+    }
+
     .bottom-span span {
         font-size: 22px;
         text-shadow: 3px 3px 6px black, 0 0 3px white;
@@ -212,6 +222,10 @@
 
     .contacts-text {
         padding-top: 15px;
+    }
+
+    .contacts-text a {
+        font-size: 15px;
     }
 
     .contacts-text p {
