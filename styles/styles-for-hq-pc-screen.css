@@ -356,6 +356,10 @@ header {
     padding-left: 100px;
 }
 
+.question {
+    cursor: pointer;
+}
+
 .question p {
     color: #13233d;
     margin: 0;
