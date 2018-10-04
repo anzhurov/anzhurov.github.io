@@ -2,7 +2,7 @@
 
     /*HEADER WRAPPER*/
     .header-wrapper {
-        height: 650px;
+        height: 700px;
     }
 
     header {
@@ -78,7 +78,7 @@
     }
 
     .challenge-title h3 {
-        font-size: 21px;
+        font-size: 30px;
     }
 
     .challenge-text {
@@ -207,7 +207,6 @@
     }
 
     .question p {
-        color: #13233d;
         margin: 0;
         line-height: 33px;
     }
