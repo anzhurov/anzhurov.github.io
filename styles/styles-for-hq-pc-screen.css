@@ -359,6 +359,10 @@ header {
     padding-left: 100px;
 }
 
+.question {
+    cursor: pointer;
+}
+
 .question p {
     margin: 0;
     line-height: 35px;
