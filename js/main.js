@@ -45,6 +45,14 @@ $("div.question-pair").click(
     }
 );
 
+$("#regButton").click(function (event) {
+   let needful = new Date(2018, 9, 15);
+   if (needful > new Date()) {
+       alert("Регистрация начнётся с 15 октября.");
+       return false
+   }
+});
+
 let controller = {};
 let $window = $(window);
 
