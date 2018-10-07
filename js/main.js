@@ -45,10 +45,10 @@ $("div.question-pair").click(
     }
 );
 
-$("#regButton").click(function (event) {
+$("#regButton").click(function () {
    let needful = new Date(2018, 9, 15);
    if (needful > new Date()) {
-       alert("Регистрация начнётся с 15 октября.");
+       $("#earlyReg").animate({opacity: 1}, 300);
        return false
    }
 });
