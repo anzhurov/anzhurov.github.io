@@ -45,13 +45,18 @@ $("div.question-pair").click(
     }
 );
 
-$("#regButton").click(function () {
-   let needful = new Date(2018, 9, 15);
-   if (needful > new Date()) {
-       $("#earlyReg").animate({opacity: 1}, 300);
-       return false
-   }
-});
+
+let regFunc = function () {
+    let needful = new Date(2018, 9, 15);
+    if (needful > new Date()) {
+        $("#earlyReg").animate({opacity: 1}, 300);
+        return false
+    }
+};
+
+$("#regButton").click(regFunc);
+
+$("#headerReg").click(regFunc);
 
 let controller = {};
 let $window = $(window);
