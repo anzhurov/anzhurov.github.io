@@ -48,7 +48,7 @@
         text-shadow: 4px 4px 8px black, 0 0 4px white;
     }
 
-    .header-wrapper h4 {
+    .header-wrapper h4, .earlyReg {
         font-size: 20px;
         margin: 15px 0 25px 0;
     }
