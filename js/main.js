@@ -54,9 +54,8 @@ let regFunc = function () {
     }
 };
 
-$("#regButton").click(regFunc);
+$(".regButt").click(regFunc);
 
-$("#headerReg").click(regFunc);
 
 let controller = {};
 let $window = $(window);
