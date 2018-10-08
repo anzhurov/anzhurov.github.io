@@ -206,7 +206,7 @@
         font-size: 15px;
     }
 
-    .question p {
+    .question p, .answer li {
         margin: 0;
         line-height: 33px;
     }

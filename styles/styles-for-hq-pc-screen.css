@@ -363,7 +363,7 @@ header {
     cursor: pointer;
 }
 
-.question p {
+.question p, .answer li {
     margin: 0;
     line-height: 35px;
 }
