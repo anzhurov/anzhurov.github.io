@@ -27,6 +27,14 @@
         font-size: 13px;
     }
 
+    .languages {
+        padding: 13px 13px 0 0;
+    }
+
+    .languages img {
+        width: 17px;
+    }
+
     .logo {
         padding: 3px 0;
         width: 75px;
@@ -110,11 +118,11 @@
     }
 
     .mainpart-wrapper ul {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .mainpart-ul {
-        padding-left: 20px;
+        padding: 25px 0 0 20px;
     }
 
     .mainpart-img {
@@ -257,5 +265,13 @@
 
     .footerbar-block p {
         font-size: 12px;
+    }
+
+    .right {
+        padding-top: 15px;
+    }
+
+    .footerbar-block li {
+        font-size: 8px;
     }
 }
