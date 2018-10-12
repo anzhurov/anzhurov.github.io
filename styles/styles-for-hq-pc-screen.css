@@ -336,7 +336,6 @@ header {
     height: 820px;
     background: url(../images/support-bg.png) no-repeat center bottom;
     background-size: cover;
-    opacity:0.95;
     position: relative;
     z-index: 1;
 }
