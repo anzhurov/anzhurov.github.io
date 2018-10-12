@@ -389,6 +389,7 @@ header {
 	height: 950px;
 	background: url(../images/contacts-bg.png) no-repeat center top;
 	background-size: cover;
+    margin: -1px;
 }
 
 .contacts-text {
