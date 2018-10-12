@@ -1,5 +1,9 @@
 @media screen and (min-width: 993px) and (max-width: 1366px) {
 
+    body {
+        overflow-x: hidden;
+    }
+
     /*HEADER WRAPPER*/
     .header-wrapper {
         height: 700px;
