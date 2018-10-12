@@ -7,7 +7,6 @@ a {
 body {
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
 }
 
 .header-wrapper {
@@ -390,6 +389,7 @@ header {
 	background: url(../images/contacts-bg.png) no-repeat center top;
 	background-size: cover;
     margin: -1px;
+    margin-right: 0.1px;
 }
 
 .contacts-text {
