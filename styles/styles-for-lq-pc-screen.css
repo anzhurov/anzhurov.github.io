@@ -68,13 +68,12 @@
         padding: 10px 26px 10px 26px;
     }
 
-
-
     /*--------*/
 
     .challenge-wrapper {
         height: 650px;
         background: url(../images/layout3.png) no-repeat center bottom;
+        background-size: cover;
     }
 
     .challenge-title {
@@ -100,8 +99,9 @@
     /*---------*/
 
     .about-wrapper {
-        height: 1100px;
+        height: 1900px;
         background: url(../images/layout4.png) no-repeat center top;
+        background-size: cover;
     }
 
     .about-block img {
@@ -131,6 +131,47 @@
 
     .mainpart-wrapper img {
         width: 430px;
+    }
+
+    .partners-wrapper {
+        padding: 70px 0 0 0;
+    }
+    .partners-wrapper h3 {
+        font-size: 28px;
+    }
+    .partners-wrapper p, span {
+        font-size: 18px;
+    }
+    .partners-line {
+        padding: 0 0 10px 0;
+    }
+    .partners-line-2 {
+        padding: 0 0 30px 0;
+    }
+    .partner-img-text {
+        height: 150px;
+        padding: 0 20px 0 20px;
+    }
+    .partner-img-text img {
+        width: 250px;
+    }
+    .partner-img-text p {
+        padding: 30px 0 0 260px;
+    }
+    .partner-img {
+        height: 150px;
+    }
+    .partner-img img{
+        width: 160px;
+    }
+    .partners-wrapper p {
+        font-size: 16px;
+    }
+    .partners-wrapper span {
+        font-size: 23px;
+    }
+    .partners-wrapper a {
+        font-size: 23px;
     }
 
     /*Программа*/
