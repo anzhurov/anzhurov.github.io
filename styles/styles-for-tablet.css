@@ -109,8 +109,49 @@
     /*---------*/
 
     .about-wrapper {
-        height: 730px;
+        height: 1500px;
         background: url(../images/layout4.png) no-repeat center top;
+    }
+
+    .partners-wrapper {
+        padding: 70px 0 0 0;
+    }
+    .partners-wrapper h3 {
+        font-size: 25px;
+    }
+    .partners-wrapper p, span {
+        font-size: 18px;
+    }
+    .partners-line {
+        padding: 0 0 10px 0;
+    }
+    .partners-line-2 {
+        padding: 0 0 30px 0;
+    }
+    .partner-img-text {
+        height: 110px;
+        padding: 0 10px 0 10px;
+    }
+    .partner-img-text img {
+        width: 200px;
+    }
+    .partner-img-text p {
+        padding: 17px 0 0 205px;
+    }
+    .partner-img {
+        height: 150px;
+    }
+    .partner-img img{
+        width: 110px;
+    }
+    .partners-wrapper p {
+        font-size: 14px;
+    }
+    .partners-wrapper span {
+        font-size: 18px;
+    }
+    .partners-wrapper a {
+        font-size: 18px;
     }
 
     .about-block img {
