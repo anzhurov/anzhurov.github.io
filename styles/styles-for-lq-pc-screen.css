@@ -99,7 +99,7 @@
     /*---------*/
 
     .about-wrapper {
-        height: 1900px;
+        height: 2000px;
         background: url(../images/layout4.png) no-repeat center top;
         background-size: cover;
     }
@@ -153,10 +153,13 @@
         padding: 0 20px 0 20px;
     }
     .partner-img-text img {
-        width: 250px;
+        width: 160px;
     }
     .partner-img-text p {
-        padding: 30px 0 0 260px;
+        padding: 30px 0 0 180px;
+    }
+    .partner-img-wrapper {
+        padding-bottom: 5px;
     }
     .partner-img {
         height: 150px;

@@ -109,7 +109,7 @@
     /*---------*/
 
     .about-wrapper {
-        height: 1500px;
+        height: 1570px;
         background: url(../images/layout4.png) no-repeat center top;
     }
 
@@ -133,19 +133,22 @@
         padding: 0 10px 0 10px;
     }
     .partner-img-text img {
-        width: 200px;
+        width: 150px;
     }
     .partner-img-text p {
-        padding: 17px 0 0 205px;
+        padding: 17px 0 0 160px;
     }
     .partner-img {
-        height: 150px;
+        height: 110px;
     }
     .partner-img img{
         width: 110px;
     }
     .partners-wrapper p {
-        font-size: 14px;
+        font-size: 10px;
+    }
+   .partner-img-wrapper {
+        padding-bottom: 0px;
     }
     .partners-wrapper span {
         font-size: 18px;
