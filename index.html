@@ -3,44 +3,315 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Game</title>
-    <link href="https://fonts.googleapis.com/css?family=Aleo" rel="stylesheet">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/media.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <title>The Ukrainian Coffee Festival</title>
 </head>
 
 <body>
-    <header>
-        <h1>Let's now play</h1>
-    </header>
 
-    <div class="score">
-        <span>user</span>
-        <span id="user_score">0</span>
-        <span>:</span>
-        <span id="computer_score">0</span>
-        <span>comp</span>
-    </div>
-    <section class="play-area">
-        <div class="option-buttons">
-            <button id="paper">
-                <img src="images/paper.png" alt="paper">
-            </button>
-            <button id="rock">
-                <img src="images/rock.png" alt="rock">
-            </button>
-            <button id="scissors">
-                <img src="images/scissors.png" alt="scissors">
-            </button>
+    <header id="home">
+        <div class="outer_wrapper">
+            <nav class="header__nav">
+                <div class="line"></div>
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" href="#home">home</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#about">about</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#directors">who's there</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#happening">what's happening</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#video">videos</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#volunteers">valunteer</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#gallery">gallery</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#contact">contact</a></li>
+                </ul>
+            </nav>
+            <div class="caption">THE<br>UKRAINIAN<br>COFFEE<br>FESTIVAL</div>
         </div>
-    </section>
+        <a class="arrow__header--visible" href="#about">
+            <div class="arrow__header__left--visible"></div>
+            <div class="arrow__header__right--visible"></div>
+        </a>
+    </header>
+    <main>
+        <section id="about">
+            <div class="inner_wrapper">
 
-    <footer>
-        <h2 id="message">Make your choice !</h2>
+                <h5 class="about__bg text_bg">about</h5>
+                <h3 class="about__headline headline">advisory board</h3>
+
+                <article class="about__article">
+                    <div class="about__info">
+                        <img class="about__img" src="./img/about.jpg" alt="">
+                        <p class="about__text right"><span class="article__text--color">THE UKRAINIAN COFFEE FESTIVAL
+                                (UCF)</span> was founded by the
+                            Speciality Coffee Association of Europe (SCAE) & Specialty Coffee
+                            Association of Ukraine(SCAU) in 2011.
+                        </p>
+                        <a href="about.html" class="btn__link about__btn">
+                            <div class="btn right clearfix">
+                                <span class="btn__content">view more</span>
+                                <div class="btn__arrow_wrapper right">
+                                    <i class="fa fa-angle-right"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </article>
+
+
+            </div>
+        </section>
+        <section id="directors">
+            <div class="middle_wrapper">
+                <h5 class="directors__bg text_bg">who's there</h5>
+                <h3 class="directors__headline headline">directors</h3>
+                <article class="directors__article clearfix">
+                    <div class="directors__card left">
+                        <div class="directors__card__img_box">
+                            <img class="directors__image" src="./img/dir1.jpg" alt="">
+                            <div class="directors__card__content">
+                                <div class="text">
+                                    <h4 class="directors__name">Connor Clarke</h4>
+                                    <p class="directors__status">Managing Director</p>
+                                </div>
+                                <div class="directors__icon">
+                                    <ul class="directors__icon__list">
+                                        <li class="directors__list__item"><a href=""><img class="directors__list__img"
+                                                    src="./img/icons/instagram-w.png" alt=""></a></li>
+                                        <li class="directors__list__item"><a href=""><img class="directors__list__img"
+                                                    src="./img/icons/facebook-w.png" alt=""></a></li>
+                                        <li class="directors__list__item"><a href=""><img class="directors__list__img"
+                                                    src="./img/icons/twitter-w.png" alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="text--visible">
+                                <h4 class="directors__name--visible">Connor Clarke</h4>
+                                <p class="directors__status--visible">Managing Director</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="directors__card left">
+                        <div class="directors__card__img_box">
+                            <img class="directors__image" src="./img/dir2.jpg" alt="">
+                            <div class="directors__card__content">
+                                <div class="text">
+                                    <h4 class="directors__name">Amy Ball</h4>
+                                    <p class="directors__status">Financial Manager</p>
+                                </div>
+                                <div class="directors__icon">
+                                    <ul class="directors__icon__list">
+                                        <li class="directors__list__item"><a href=""><img class="directors__list__img"
+                                                    src="./img/icons/instagram-w.png" alt=""></a></li>
+                                        <li class="directors__list__item"><a href=""><img class="directors__list__img"
+                                                    src="./img/icons/facebook-w.png" alt=""></a></li>
+                                        <li class="directors__list__item"><a href=""><img class="directors__list__img"
+                                                    src="./img/icons/twitter-w.png" alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="text--visible">
+                                <h4 class="directors__name--visible">Amy Ball</h4>
+                                <p class="directors__status--visible">Financial Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="directors__card left">
+                        <div class="directors__card__img_box">
+                            <img class="directors__image" src="./img/dir3.jpg" alt="">
+                            <div class="directors__card__content">
+                                <div class="text">
+                                    <h4 class="directors__name">Alex Bernson</h4>
+                                    <p class="directors__status">Events Coordinator</p>
+                                </div>
+                                <div class="directors__icon">
+                                    <ul class="directors__icon__list">
+                                        <li class="directors__list__item"><a href=""><img class="directors__list__img"
+                                                    src="./img/icons/instagram-w.png" alt=""></a></li>
+                                        <li class="directors__list__item"><a href=""><img class="directors__list__img"
+                                                    src="./img/icons/facebook-w.png" alt=""></a></li>
+                                        <li class="directors__list__item"><a href=""><img class="directors__list__img"
+                                                    src="./img/icons/twitter-w.png" alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="text--visible">
+                                <h4 class="directors__name--visible">Alex Bernson</h4>
+                                <p class="directors__status--visible">Events Coordinator</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="directors__card left">
+                        <div class="directors__card__img_box">
+                            <img class="directors__image" src="./img/dir4.jpg" alt="">
+                            <div class="directors__card__content">
+                                <div class="text">
+                                    <h4 class="directors__name">Irene Beretta</h4>
+                                    <p class="directors__status">Brand Manager</p>
+                                </div>
+                                <div class="directors__icon">
+                                    <ul class="directors__icon__list">
+                                        <li class="directors__list__item"><a href=""><img class="directors__list__img"
+                                                    src="./img/icons/instagram-w.png" alt=""></a></li>
+                                        <li class="directors__list__item"><a href=""><img class="directors__list__img"
+                                                    src="./img/icons/facebook-w.png" alt=""></a></li>
+                                        <li class="directors__list__item"><a href=""><img class="directors__list__img"
+                                                    src="./img/icons/twitter-w.png" alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="text--visible">
+                                <h4 class="directors__name--visible">Irene Beretta</h4>
+                                <p class="directors__status--visible">Brand Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <a href="director.html" class="btn__link directors__btn">
+                    <div class=" btn  clearfix">
+                        <span class="btn__content">view more</span>
+                        <div class="btn__arrow_wrapper right">
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section id="happening">
+            <div class="inner_wrapper">
+                <h5 class="happening__bg text_bg">event</h5>
+                <h3 class="happening__headline headline">THE ROASTERS VILLAGE & CUPPING ZONE</h3>
+
+                <article class="happening__article">
+                    <div class="happening__info">
+                        <p class="happening__text"><span class="happening__text--color">
+                                The Roasters Village & Cupping Zone,
+                            </span> curated by Maxwell Colonna-Dashwood, is all about bringing the
+                            industry’s best coffees, people and companies together into one space.
+                            <br> <br>
+                            We want to create a dynamic space that allows and encourages visitors
+                            to sample and focus on incredible coffee.
+                        </p>
+                        <img class="happening__img" src="./img/happening.jpg" alt="">
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="video">
+            <div class="middle_wrapper">
+                <h5 class="video__bg text_bg">videos</h5>
+                <h3 class="video__headline headline">COFFEE FESTIVAL VIDEOS</h3>
+                <article class="video__article">
+                    <video class="video__article__video" controls="controls" poster="./img/video.jpg">
+                        <source src="./video/Coffee Festival.mp4" type='video/mp4'>
+                    </video>
+                </article>
+            </div>
+        </section>
+        <section id="volunteers">
+            <div class="middle_wrapper">
+                <h5 class="volunteers__bg text_bg">volunteers</h5>
+                <h3 class="volunteers__headline headline">calling all coffee lovers</h3>
+                <article class="volunteers__article">
+                    <div class="volunteers__info">
+                        <div class="volunteers__article__text">
+                            <span class="article__text--color">
+                                Calling all coffee lovers – want to join the Ukrainian
+                                Coffee Festival Team?
+                            </span>
+                            <p>
+                                We’re looking for passionate, reliable and enthusiastic individuals
+                                to volunteer at the Ukrainian Coffee Festival 2019. <br>
+                                A wider range of volunteer opportunities are on offer in 2019 than
+                                ever before, from half-day general festival runner roles to 3-day
+                                Senior Volunteer positions guaranteeing front-line Event
+                                Management & Coffee Industry experience and insight. <br>
+                                In exchange for volunteering at the festival, you will receive a
+                                hands-on experience with full access, outside of your volunteer
+                                shift, to explore the festival! <br>
+                                So however, you take your coffee, if you’d like to volunteer at
+                                the first Ukrainian Coffee Festival, fill out the form and we’ll
+                                be in touch soon! </p>
+                        </div>
+                        <a href="volunteers.html" class="btn__link volunteers__btn">
+                            <div class=" btn  clearfix">
+                                <span class="btn__content">form</span>
+                                <div class="btn__arrow_wrapper right">
+                                    <i class="fa fa-angle-right"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="gallery">
+            <div class="middle_wrapper">
+                <h5 class="gallery__bg text_bg">gallery</h5>
+                <h3 class="gallery__headline headline">photos</h3>
+                <article class="gallery__article">
+                    <div class="gallery__article__img__box">
+                        <img src="./img/gal1.jpg" alt="" class="gallery__article__img">
+                    </div>
+                    <div class="gallery__article__img__box">
+                        <img src="./img/gal2.jpg" alt="" class="gallery__article__img">
+                    </div>
+                    <div class="gallery__article__img__box">
+                        <img src="./img/gal3.jpg" alt="" class="gallery__article__img">
+                    </div>
+                </article>
+                <a href="gallery.html" class="btn__link gallery__btn">
+                    <div class="btn  clearfix">
+                        <span class="btn__content">view more</span>
+                        <div class="btn__arrow_wrapper right">
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="middle_wrapper">
+                <h5 class="contact__bg text_bg">contact</h5>
+                <h3 class="contact__headline headline">we are here</h3>
+                <article class="contact__article clearfix">
+                    <div class="contact__article__text left">
+                        <h2 class="contact__article__headline">contact us</h2>
+                        <span class="contact__text--color">Address</span>
+                        <p class="contact__text">4 Svobody sq. Kharkov Ukraine 61002</p>
+                        <span class="contact__text--color">Phone</span>
+                        <p class="contact__text">+380 95-654-76-09</p>
+                        <span class="contact__text--color">E-mail</span>
+                        <p class="contact__text">ukrcoffeefestiv@gmail.com</p>
+                    </div>
+                    <iframe class="contact__map right" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.2762544945813!2d36.22507911527988!3d50.00617712715837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a11fe6d58c51%3A0x292ec8c2d144ae07!2z0L_Quy4g0KHQstC-0LHQvtC00YssIDQsINCl0LDRgNGM0LrQvtCyLCDQpdCw0YDRjNC60L7QstGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA2MTAwMA!5e0!3m2!1sru!2sua!4v1546615536588"
+                        allowfullscreen></iframe>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="footer__content">
+            <p class="footer__info">
+                Made by Mariia Aloshyna
+            </p>
+            <div class="footer__icons">
+                <ul class="footer__icon__list">
+                    <li class="footer__list__item"><a href=""><img src="./img/icons/facebook-w.png" alt="" class="footer__list__img"></a></li>
+                    <li class="footer__list__item"><a href=""><img src="./img/icons/google-plus-w.png" alt="" class="footer__list__img"></a></li>
+                    <li class="footer__list__item"><a href=""><img src="./img/icons/instagram-w.png" alt="" class="footer__list__img"></a></li>
+                    <li class="footer__list__item"><a href=""><img src="./img/icons/twitter-w.png" alt="" class="footer__list__img"></a></li>
+                    <li class="footer__list__item"><a href=""><img src="./img/icons/youtube-w.png" alt="" class="footer__list__img"></a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
-
-    <script src="logic.js"></script>
 </body>
 
 </html>
