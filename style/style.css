@@ -25,29 +25,33 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
 }
 body {
-    background-color: #0f0f0f;
     height: 100%;
+    background-color: #0f0f0f;
+    font-family: 'Akrobat';
+    color: #fff; 
+}
+.container {
+    display: none;
 }
 .outer_wrapper {
+    position: relative;
     margin: 0 auto;
     margin: 0 4%;
-    position: relative;
 }
 .inner_wrapper {
+    position: relative;
     margin: 0 auto;
     margin: 0 30%;
-    position: relative;
 }
 .middle_wrapper {
+    position: relative;
     margin: 0 auto;
     margin: 0 17%;
-    position: relative;
 }
 section {
     width: 100%;
     height: 100vh;
     text-align: center;
-    color: #fff;
 }
 .text_bg {
     position: relative;
@@ -61,10 +65,10 @@ section {
     opacity: .4;
 }
 .headline {
-    font-size: 1.5em;
     position: absolute;
     text-transform: uppercase;
-    color: #fff;
+    font-size: 1.5em;
+    font-family: 'Bodoni';
 }
 .arrow__header--visible {
     display: none;
@@ -72,14 +76,14 @@ section {
 .btn {
     width: 170px;
     height: 40px;
-    border: 1px solid gray;
     box-sizing: border-box;
+    border: 1px solid gray;
 }
 .btn__link {
     width: 170px;
     height: 40px;
-    text-decoration: none;
     color: #fff;
+    text-decoration: none;
 }
 .btn__arrow_wrapper {
     width: 39px;
@@ -94,8 +98,8 @@ section {
 }
 .btn__content {
     font: 20px 'Akrobat';
-    text-transform: uppercase;
     line-height: 39px;
+    text-transform: uppercase;
 }
 .fa {
     font-size: 36px;
@@ -105,28 +109,27 @@ section {
 #home {
     height: 100vh;
     background: url(../img/backgr_img.png) no-repeat center bottom/cover;
-    color: #fff; 
 }
 .header__nav {
     height: 100vh;
 }
 .line {
-    height: 100vh;
-    width: 2px;
-    opacity: .4;
-    background-color: #979695;
-    display: inline-block;
     position: fixed;
     top: 0;
     left: 40px;
+    display: inline-block;
+    height: 100vh;
+    width: 2px;
+    background-color: #979695;
     z-index: 1;
+    opacity: .4;
 }
 .nav__list {
-    margin: 0;
-    padding: 0;
     position: fixed;
     top: 0;
     left: 35px;
+    margin: 0;
+    padding: 0;
     z-index: 2;
 }
 .nav__item {
@@ -137,7 +140,6 @@ section {
     list-style-position: inside;
     text-transform: uppercase;
     transition: all .1s linear;
-    /* cursor: pointer; */
 }
 .nav__link {
     color: #fff;
@@ -146,26 +148,26 @@ section {
 .nav__item:hover {
     position: relative;
     left: -6px;
-    list-style-image: url(../img/mark_hov.png);
     font-size: 20px;
+    list-style-image: url(../img/mark_hov.png);
     opacity: 1;
 }
 
 .caption {
     position: absolute;
-    right: 0;
     top: 20%;
+    right: 0;
+    width: 500px;
     font: 80px 'Bodoni';
     text-align: right;
-    width: 500px;
 }
 .about__headline,
 .happening__headline,
 .volunteers__headline,
 .contact__headline {
     top: 55px;
-    left: 0;
     right: 0;
+    left: 0;
 }
 .about__article,
 .directors__article,
@@ -174,8 +176,8 @@ section {
 .volunteers__article,
 .gallery__article,
 .contact__article {
-    margin-top: 8%;
     width: 100%;
+    margin-top: 8%;
 }
 .about__info,
 .happening__info {
@@ -196,16 +198,15 @@ section {
 .about__text,
 .happening__text {
     position: absolute;
+    display: inline-block;
     width: 49%;
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Akrobat';
-    font-size: 1.2em;
-    line-height: 1.4em;
-    display: inline-block;
     text-align: left;    
     overflow: hidden;
+    font-size: 1.2em;
+    line-height: 1.4em;
 }
 .about__text{
     right: 0;
@@ -219,8 +220,8 @@ section {
 .about__btn,
 .happening__btn {
     position: absolute;
-    bottom: 0;
     right: 0;
+    bottom: 0;
 }
 .directors__bg {
     left: -35%;
@@ -229,20 +230,19 @@ section {
     top: 55px;
     left: 0;
 }
-.directors__card {
-    display: inline-block;
-    position: relative;
-    width: 25%;
-    height: 270px;
-    overflow: hidden;
-    text-align: center;
-}
+.directors__card,
 .directors__card__img_box {
     position: relative;
     display: inline-block;
-    width: 180px; 
-    height: 270px;
     overflow: hidden;
+    height: 270px;
+}
+.directors__card {
+    width: 25%;
+    text-align: center;
+}
+.directors__card__img_box {
+    width: 180px; 
 }
 .directors__image {
     width: 100%;
@@ -250,10 +250,10 @@ section {
 } 
 .directors__card__content {
     position: absolute;
-    width: 160px;
-    height: 250px;
     top: 10px;
     right: 10px;
+    width: 160px;
+    height: 250px;
     background-color:rgba(31, 24, 20, 0);     
     text-align: center;
 }
@@ -270,14 +270,14 @@ section {
     display: inline-block;
     padding-bottom: 5px;
     font: 18px 'Bodoni';
-    text-transform: uppercase;
     color: rgb(255, 255, 255, 0);
+    text-transform: uppercase;
 }
 .directors__status {
     display: inline-block;
-    color: rgb(251, 151, 77, 0);
     font: 12px 'Akrobat';
     font-style: italic;
+    color: rgb(251, 151, 77, 0);
 } 
 .directors__icon {
     position: absolute;
@@ -288,9 +288,9 @@ section {
 }
 .directors__icon__list, 
 .footer__icon__list{
-    list-style: none;
     margin: 0;
     padding-left: 0;
+    list-style: none;
 }
 .directors__list__item,
 .footer__list__item {
@@ -306,9 +306,7 @@ section {
 .directors__name,
 .directors__status,
 .directors__icon {
-    transition-property: all;
-    transition-duration: .4s;
-    transition-timing-function: ease-in;
+    transition: all .4s ease-in;
 }
 .directors__card__img_box:hover .directors__card__content {
     background-color:rgba(31, 24, 20, 0.7);               
@@ -323,8 +321,8 @@ section {
     opacity: 1;
 }
 .directors__btn {
-    margin: 8% auto;
     display: block;
+    margin: 8% auto;
 }
 .happening__bg {
     left: 0;
@@ -356,15 +354,14 @@ section {
 }
 .volunteers__article__text {
     position: absolute;
-    width: 70%;
     left: 0;
+    display: inline-block;
+    width: 70%;
     margin: 0;
     padding: 0;
-    font-family: 'Akrobat';
+    text-align: left;
     font-size: 1.2em;
     line-height: 1.5em;
-    display: inline-block;
-    text-align: left;
 }
 .volunteers__btn {
     position: absolute;
@@ -384,8 +381,8 @@ section {
     margin-top: 3%;
 }
 .gallery__article__img__box {
-    width: 30%;
     display: inline-block;
+    width: 30%;
 }
 .gallery__article__img {
     width: 90%;
@@ -397,8 +394,8 @@ section {
     filter: brightness(100%);
 }
 .gallery__btn {
-    margin: 5% auto;
     display: block;
+    margin: 5% auto;
 }
 .contact__article__text {
     text-align: left;
@@ -406,22 +403,18 @@ section {
 .contact__article__headline {
     margin: 0;
     padding: 0;
-    font-family: 'Akrobat';
+    text-transform: uppercase;
     font-size: 1.2em;
     line-height: 1.5em;
-    text-transform: uppercase;
-    color: #fff;
 }
 
 .contact__text--color {
-    margin-top: 30%;
     display: block;
-    font-family: 'Akrobat';
+    margin-top: 30%;
     font-size: 1.2em;
     line-height: 1.5em;
 }
 .contact__text {
-    font-family: 'Akrobat';
     font-size: 1em;
     line-height: 1.5em;
 }
@@ -435,8 +428,8 @@ section {
     position: relative;
     width: 100%;
     height: 100px;
-    background-color: #000000;
     text-align: center;
+    background-color: #000000;
 }
 .footer__content {
     position: absolute;
@@ -447,8 +440,6 @@ section {
     opacity: .7;
 }
 .footer__info {
-    color: #fff;
-    font-family: 'Akrobat';
     font-size: 1em;
     line-height: 1.5em;
 }

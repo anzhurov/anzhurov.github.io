@@ -1,14 +1,14 @@
 
 body {
-    background-color: #0f0f0f;
     height: 100%;
+    background-color: #0f0f0f;
     color: #fff;
 }
 .about__header,
 .director__header,
 .gallery__header{
-    height: 100vh;
     position: relative;
+    height: 100vh;
 }
 .about__header{
     background: url(../img/about_page.jpg) no-repeat fixed center bottom/cover;
@@ -23,38 +23,38 @@ body {
 .director__header__content,
 .gallery__header__content {
     position: absolute;
+    top: 50%;
     width: 100%;   
     height: 100px;
-    top: 50%;
     margin-top: -50px;
     background-color: rgba(168, 166, 166, 0.3);
 }
 .about__header__caption,
 .director__header__caption,
 .gallery__header__caption {
+    text-align: center;
+    text-transform: uppercase;
     font: 80px 'Bodoni';
     color: #fff;
-    text-transform: uppercase;
-    text-align: center;
 }
 .arrow__header {
-    cursor: pointer;
-    width: 30px;
-    left: 50%;
     position: absolute;
+    left: 50%;
     bottom: 20px;
-    transform: translateX(-50%);
+    width: 30px;
     height: 20px;
+    transform: translateX(-50%);
     transition: all .3s;
+    cursor: pointer;
 }
     
 .arrow__header__right, .arrow__header__left  {
-    background-color: rgba(168, 166, 166);
-    width: 4px;
-    top: -4px;
     position: absolute;
+    top: -4px;
     left: 50%;
+    width: 4px;
     height: 100%;
+    background-color: rgba(168, 166, 166);
 }
     
 .arrow__header__right {
@@ -80,19 +80,19 @@ body {
 .about__main__info,
 .director__main__info {
     padding-top: 8%;
-    color: #fff;
+    text-align: justify;
     font-family: 'Akrobat';
     font-size: 1.2em;
     line-height: 1.4em;
-    text-align: justify;
+    color: #fff;
 }
 .about__main__btn,
 .dir__btn,
 .gallery__btn {
     position: relative;
+    display: block;
     margin: 8% auto;
     text-align: center;
-    display: block;
 }
 .dir__info {
     width: 100%;
@@ -117,9 +117,9 @@ body {
     text-align: center;
 }
 .dir__info__img {
-    margin-top: 5px;
     width: 100%;
     height: auto;
+    margin-top: 5px;
 }
 .dir__icon {
     margin-top: 20px;
@@ -129,27 +129,27 @@ body {
 }
 
 .valunteer__wrapper {
-    background-color: rgb(15, 15, 15, .7); 
     padding: 50px 50px; 
+    background-color: rgb(15, 15, 15, .7); 
 }
 .volunteer__form {
     margin: 0 auto;
 }
 .volunteer__form__input {
     display: block;
-    padding: 0 5px;
-    margin: 3px auto 15px;
     width: 100%;
     height: 27px;
+    margin: 3px auto 15px;
+    padding: 0 5px;
+    box-sizing: border-box;
     border: none;
     border-radius: 3px;
-    box-sizing: border-box;
 }
 .volunteer__form__label {
-    color: #fff;
     font-family: 'Akrobat';
     font-size: 1.2em;
     line-height: 1.4em;
+    color: #fff;
 }
 
 .volunteer__bg {
@@ -157,11 +157,11 @@ body {
     background: url(../img/vol_page.jpg) no-repeat fixed center top/cover;    
 }
 .volunteer__form__headline {
+    margin-bottom: 20px;
     font-family: 'Bodoni';
     font-size: 1.2em;
     line-height: 1.4em;
     color: #fb974d;
-    margin-bottom: 20px;
 }
 .volunteer__form__block {
     margin-bottom: 50px;
@@ -173,18 +173,18 @@ body {
     margin-bottom: 0;
 }
 .volunteer__form__block--btn {
-    margin: 0 auto;    
     width: 150px;
+    margin: 0 auto;    
 }
 .volunteer__form__input--btn {
     width: 100%;
     height: 40px;
-    background: none;
     border: 1px solid gray;
-    color: #fff;
-    cursor: pointer;
+    background: none;
     text-transform: uppercase;
     font: 20px 'Bodoni';
+    color: #fff;
+    cursor: pointer;
 }
 .volunteer__form__input--btn:hover {
     border: 1px solid #fb974d;
@@ -198,16 +198,16 @@ body {
     width: 870px;
     height: 250px;
     margin: 0 auto;
-    overflow: hidden;
     margin-top: 10px;
+    overflow: hidden;
 }
 .gallery__text__box {
     position: relative;
     left: 250px;
     display: inline-block;
-    margin-right: -4px;
     width: 250px;
     height: 100%;
+    margin-right: -4px;
     text-align: center;
     background-color: #fb974d;
     z-index: -1;
@@ -219,17 +219,17 @@ body {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    color: #fff;
+    text-transform: uppercase;
     font-family: 'Bodoni';
     font-size: 1.2em;
-    text-transform: uppercase;
+    color: #fff;
 }
 .gallery__img__box {
     display: inline-block;
-    margin-right: -4px;
     width: 375px;    
     height: 100%;
     margin: 0 auto;
+    margin-right: -4px;
     overflow: hidden;
     z-index: 1;
 }
@@ -243,9 +243,9 @@ body {
     position: absolute;
     right: 250px;
     display: inline-block;
-    margin-right: -4px;
     width: 250px; 
     height: 100%;
+    margin-right: -4px;
     overflow: hidden;
     z-index: -1;
     transition: all .3s;
