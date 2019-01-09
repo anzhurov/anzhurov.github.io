@@ -37,14 +37,14 @@
         display: none;
     }
       
-    .change .bar1 {
+    .change_cont .bar1 {
         -webkit-transform: rotate(-45deg) translate(-9px, 6px);
         transform: rotate(-45deg) translate(-6px, 6px);
      }
       
-    .change .bar2 {opacity: 0;}
+    .change_cont .bar2 {opacity: 0;}
   
-    .change .bar3 {
+    .change_cont .bar3 {
         -webkit-transform: rotate(45deg) translate(-8px, -8px);
         transform: rotate(45deg) translate(-6px, -7px);
     }
