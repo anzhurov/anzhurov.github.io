@@ -12,3 +12,9 @@ $(document).ready(function () {
         }
     });
 });
+function myFunction(x) {
+    x.classList.toggle("change");
+}
+function myFunction_cont(x) {
+    x.classList.toggle("change_cont");
+}

@@ -2,11 +2,82 @@
     .header__nav {
         visibility: hidden;
     }
+    .cont {
+        position: fixed;
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        top: 5px;
+        left: 10px;
+        background-color: rgb(39, 39, 39, .5);
+        border-radius: 50%;
+        z-index: 1;
+        transition: all .3s;
+    }
     .container {
-        display: block;
-        position: relative;
+        position: fixed;
+        top: 10px;
+        left: 16.5px;
+        z-index: 2;
+        display: inline-block;
+        width: 30px;
+        height: 33px;
+        cursor: pointer;
         overflow: hidden;
-        background-color: #533557;
+    }
+    .bar1, .bar2, .bar3 {
+        width: 30px;
+        height: 3px;
+        background-color: rgb(251, 151, 77);
+        margin: 6px 0;
+        border-radius: 2px;
+        transition: 0.4s;
+      }
+    .header__nav--hamb {
+        display: none;
+    }
+      
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-6px, 6px);
+     }
+      
+    .change .bar2 {opacity: 0;}
+  
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-6px, -7px);
+    }
+    .change_cont {
+        width: 100%;
+        height: 300px;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        background-color: rgb(39, 39, 39);
+    }
+    .change_cont .header__nav--hamb {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+    .nav__item--hamb {
+        font: 20px 'Bodoni'; 
+        line-height: 1.5;
+        opacity: 0.4;
+        list-style: none;
+        text-transform: uppercase;
+    }
+    .nav__list--hamb {
+        text-align: center;
+        padding: 0;
+    }
+    .nav__link--hamb {
+        color: #fff;
+        text-decoration: none;
     }
     
     .caption {

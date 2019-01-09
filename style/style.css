@@ -30,7 +30,8 @@ body {
     font-family: 'Akrobat';
     color: #fff; 
 }
-.container {
+.container,
+.cont {
     display: none;
 }
 .outer_wrapper {
