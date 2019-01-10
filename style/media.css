@@ -1,4 +1,4 @@
-@media only screen and (max-width: 767px) and (max-height: 1023px){
+@media only screen and (max-width: 767px) and (min-height: 570px){
     .header__nav {
         visibility: hidden;
     }
@@ -111,7 +111,7 @@
         height: 320px;
     }
     .happening__info {
-        height: 420px;
+        height: 520px;
         top: 50px;
     }
     .about__img, 
@@ -206,7 +206,7 @@
         margin-top: 50px;
     }
     .volunteers__info {
-        height: 580px;
+        height: 680px;
         top: 50px;
     }
     .volunteers__article__text {
