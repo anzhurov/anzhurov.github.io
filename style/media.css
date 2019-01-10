@@ -65,7 +65,7 @@
         transform: translate(-50%, -50%);
     }
     .nav__item--hamb {
-        font: 20px 'Bodoni'; 
+        font: 20px 'Bodoni', Georgia, 'Times New Roman', Times, serif; 
         line-height: 1.5;
         opacity: 0.4;
         list-style: none;
@@ -146,7 +146,7 @@
     }
     section {
         height: auto;
-        margin-top: 70px;
+        margin-top: 30px;
     }
     .directors__bg {
         left: 0;
@@ -189,7 +189,7 @@
     }
     .directors__name--visible {
         padding-bottom: 5px;
-        font: 18px 'Bodoni';
+        font: 18px 'Bodoni', Georgia, 'Times New Roman', Times, serif;
         text-transform: uppercase;
         color: rgb(255, 255, 255);
     }
@@ -215,10 +215,10 @@
         text-align: justify;
     }
     .volunteers__btn {
-        top: 500px;
+        top: 100%;
         left: 50%;
         margin-right: -50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -200%);
     }
     .gallery__bg {
         left: 0;
@@ -408,7 +408,7 @@ and (max-width: 1439px){
         transform: translate(-50%, -50%);
     }
     .nav__item--hamb {
-        font: 3.5vh 'Bodoni'; 
+        font: 3.5vh 'Bodoni', Georgia, 'Times New Roman', Times, serif; 
         line-height: 1.5;
         opacity: 0.4;
         list-style: none;
@@ -511,7 +511,7 @@ and (max-width: 1439px){
     }
     .directors__name--visible {
         padding-bottom: 5px;
-        font: 2.5vh 'Bodoni';
+        font: 2.5vh 'Bodoni', Georgia, 'Times New Roman', Times, serif;
         text-transform: uppercase;
         color: rgb(255, 255, 255);
     }

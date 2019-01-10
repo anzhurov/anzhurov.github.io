@@ -1,6 +1,8 @@
 @font-face {
     font-family: 'Akrobat';
-    src: url(../fonts/akrobat/Akrobat-Thin.otf)
+    src: url(../fonts/akrobat/Akrobat-Thin.otf);
+    src: url(../fonts/akrobat/Akrobat-Light.eot);
+    src: url(../fonts/akrobat/Akrobat-Light.woff) format('woff');
 }
 @font-face {
     font-family: 'Bodoni';
@@ -70,7 +72,7 @@ section {
     position: absolute;
     text-transform: uppercase;
     font-size: 3.6vh;
-    font-family: 'Bodoni';
+    font-family: 'Bodoni', Georgia, 'Times New Roman', Times, serif;
 }
 .arrow__header--visible {
     display: none;
@@ -135,7 +137,7 @@ section {
     z-index: 2;
 }
 .nav__item {
-    font: 2.5vh 'Bodoni'; 
+    font: 2.5vh 'Bodoni', Georgia, 'Times New Roman', Times, serif; 
     opacity: 0.4;
     line-height: calc(100vh/8);
     list-style-image: url(../img/marker.png);
@@ -159,7 +161,7 @@ section {
     position: absolute;
     top: 20%;
     right: 0;
-    font: 12vh 'Bodoni';
+    font: 12vh 'Bodoni', Georgia, 'Times New Roman', Times, serif;
     text-align: right;
 }
 .about__headline,
@@ -270,15 +272,19 @@ section {
 .directors__name {
     display: inline-block;
     padding-bottom: 5px;
-    font: 2.3vh 'Bodoni';
-    color: rgb(255, 255, 255, 0);
+    font: 2.3vh 'Bodoni', Georgia, 'Times New Roman', Times, serif;
+    /* color: rgb(255, 255, 255, 0); */
+    color : rgb(255, 255, 255);
     text-transform: uppercase;
+    opacity: 0;
 }
 .directors__status {
     display: inline-block;
     font: 2vh 'Akrobat';
     font-style: italic;
-    color: rgb(251, 151, 77, 0);
+    /* color: rgb(251, 151, 77, 0); */
+    color: rgb(251, 151, 77);
+    opacity: 0;
 } 
 .directors__icon {
     position: absolute;
@@ -313,10 +319,12 @@ section {
     background-color:rgba(31, 24, 20, 0.7);               
 }
 .directors__card__img_box:hover .directors__name {
-    color: rgb(255, 255, 255, 1);    
+    /* color: rgb(255, 255, 255, 1);*/
+    opacity: 1;
 }
 .directors__card__img_box:hover .directors__status {
-    color: rgb(251, 151, 77, 1);
+    /* color: rgb(251, 151, 77, 1); */
+    opacity: 1;
 }
 .directors__card__img_box:hover .directors__icon {
     opacity: 1;
@@ -388,6 +396,7 @@ section {
 .gallery__article__img {
     width: 90%;
     transition: all .3s;
+    -ms-filter: "progid: DXImageTransform.Microsoft.brightness(50%)";
     filter: brightness(50%);
 }
 .gallery__article__img:hover {
