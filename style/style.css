@@ -59,7 +59,7 @@ section {
     position: relative;
     margin: 0;
     padding: 0;
-    font-size: 6em;
+    font-size: 13vh;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 10px;
     color: #3e2a25;
@@ -69,7 +69,7 @@ section {
 .headline {
     position: absolute;
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 3.6vh;
     font-family: 'Bodoni';
 }
 .arrow__header--visible {
@@ -99,7 +99,7 @@ section {
     border-left: 1px solid #fb974d;
 }
 .btn__content {
-    font: 20px 'Akrobat';
+    font: 3vh 'Akrobat';
     line-height: 39px;
     text-transform: uppercase;
 }
@@ -135,7 +135,7 @@ section {
     z-index: 2;
 }
 .nav__item {
-    font: 15px 'Bodoni'; 
+    font: 2.5vh 'Bodoni'; 
     opacity: 0.4;
     line-height: calc(100vh/8);
     list-style-image: url(../img/marker.png);
@@ -150,7 +150,7 @@ section {
 .nav__item:hover {
     position: relative;
     left: -6px;
-    font-size: 20px;
+    font-size: 3vh;
     list-style-image: url(../img/mark_hov.png);
     opacity: 1;
 }
@@ -159,8 +159,7 @@ section {
     position: absolute;
     top: 20%;
     right: 0;
-    width: 500px;
-    font: 80px 'Bodoni';
+    font: 12vh 'Bodoni';
     text-align: right;
 }
 .about__headline,
@@ -207,7 +206,7 @@ section {
     padding: 0;
     text-align: left;    
     overflow: hidden;
-    font-size: 1.2em;
+    font-size: 3vh;
     line-height: 1.4em;
 }
 .about__text{
@@ -271,13 +270,13 @@ section {
 .directors__name {
     display: inline-block;
     padding-bottom: 5px;
-    font: 18px 'Bodoni';
+    font: 2.3vh 'Bodoni';
     color: rgb(255, 255, 255, 0);
     text-transform: uppercase;
 }
 .directors__status {
     display: inline-block;
-    font: 12px 'Akrobat';
+    font: 2vh 'Akrobat';
     font-style: italic;
     color: rgb(251, 151, 77, 0);
 } 
@@ -337,7 +336,7 @@ section {
     right: 0;
 }
 .video__bg {
-    right: -50%;
+    right: -53%;
     display: inline;
 }
 .video__headline {
@@ -362,7 +361,7 @@ section {
     margin: 0;
     padding: 0;
     text-align: left;
-    font-size: 1.2em;
+    font-size: 3vh;
     line-height: 1.5em;
 }
 .volunteers__btn {
@@ -406,18 +405,18 @@ section {
     margin: 0;
     padding: 0;
     text-transform: uppercase;
-    font-size: 1.2em;
+    font-size: 3vh;
     line-height: 1.5em;
 }
 
 .contact__text--color {
     display: block;
     margin-top: 30%;
-    font-size: 1.2em;
+    font-size: 3vh;
     line-height: 1.5em;
 }
 .contact__text {
-    font-size: 1em;
+    font-size: 2.5vh;
     line-height: 1.5em;
 }
 .contact__map {
@@ -442,7 +441,7 @@ section {
     opacity: .7;
 }
 .footer__info {
-    font-size: 1em;
+    font-size: 2.5vh;
     line-height: 1.5em;
 }
 .footer__icons {
