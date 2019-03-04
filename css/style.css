@@ -670,15 +670,15 @@ header {
         display: none;
     }
 
-    .slider__slide__image:nth-child(1) {
+    .slider__link:nth-child(1) .slider__slide__image {
         content: url("../img/slider/slide_1_tablet.jpg");
     }
 
-    .slider__slide__image:nth-child(2) {
+    .slider__link:nth-child(2) .slider__slide__image {
         content: url("../img/slider/slide_2_tablet.jpg");
     }
 
-    .slider__slide__image:nth-child(3) {
+    .slider__link:nth-child(3) .slider__slide__image {
         content: url("../img/slider/slide_3__tablet.jpg");
     }
 
@@ -871,15 +871,15 @@ header {
         height: 475px;
     }
 
-    .slider__slide__image:nth-child(1) {
+    .slider__link:nth-child(1) .slider__slide__image {
         content: url("../img/slider/slide_1_mobile.jpg");
     }
 
-    .slider__slide__image:nth-child(2) {
+    .slider__link:nth-child(2) .slider__slide__image {
         content: url("../img/slider/slide_2_mobile.jpg");
     }
 
-    .slider__slide__image:nth-child(3) {
+    .slider__link:nth-child(3) .slider__slide__image {
         content: url("../img/slider/slide_3__mobile.jpg");
     }
 
