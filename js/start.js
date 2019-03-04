@@ -1,4 +1,4 @@
-const SLIDER_TIMER_INTERVAL = 5000;
+const SLIDER_TIMER_INTERVAL = 10000;
 
 var mainContent = document.getElementById("main");
 var arrowLeft = document.querySelector(".slider__arrow--left");
