@@ -251,6 +251,7 @@
         display: flex;
         flex-wrap: wrap;
         padding: 40px;
+        background-color: white;
     }
 
     .category__list {
@@ -341,7 +342,7 @@
     }
 
     #category--tablet {
-        display: none; //display: flex;
+        /*display: none; //display: flex;*/
         z-index: 2;
     }
 

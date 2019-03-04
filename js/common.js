@@ -1,4 +1,3 @@
-var category = document.getElementById("category--tablet");
 var menuButton = document.querySelector(".mobile-menu");
 var menu = document.getElementById("menu__mobile");
 

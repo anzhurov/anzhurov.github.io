@@ -102,8 +102,7 @@
     box-sizing: border-box;
 }
 
-.item__info__size__value:active,
-.item__info__color__value:active {
+.checked__item {
     border: 1px solid #e5e5e5;
 }
 
