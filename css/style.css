@@ -99,6 +99,7 @@ section {
 }
 
 .tablet__view,
+.mobile__view,
 #menu__mobile,
 #site-map--mobile,
 #soc__links--mobile {
@@ -765,6 +766,21 @@ header {
 }
 
 @media only screen and (max-width: 767px) {
+    .tablet__view {
+        display: block !important;
+    }
+
+    .tablet__hidden {
+        display: none !important;
+    }
+
+    .mobile__view {
+        display: block !important;
+    }
+
+    .mobile__hidden {
+        display: none !important;
+    }
 
     .content-wrapper {
         padding: 0 15px;

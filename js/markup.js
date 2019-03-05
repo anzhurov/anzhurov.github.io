@@ -1,15 +1,17 @@
-function getProductsFromStorage() {
-    let products = [];
-
-    for (let i = 0; i < storage.length; i++) {
-        let product = JSON.parse(storage.key(i));
-        products.push(product);
+class Product {
+    constructor(title, price, color, fashion, productType, brand, productSize, photo) {
+        this.title = title;
+        this.price = price;
+        this.color = color;
+        this. fashion = fashion;
+        this.productType = productType;
+        this.brand = brand;
+        this.productSize = productSize;
+        this.photo = "./img/" + photo;
     }
-
-    return products;
 }
 
-function createProductElement(productItem) {
+function createProductElement() {
     let productElement = document.createElement("div");
     let productImageWrapper = document.createElement("div");
     let productImage = document.createElement("img");
@@ -40,10 +42,8 @@ function createProductElement(productItem) {
 
     productImage.setAttribute("alt", "Photo of item");
 
-    productTitle.innerHTML = productItem.title;
-    productPrice.innerHTML = productItem.price;
-    productColor.innerHTML = "Color:" + productItem.color;
-    productSize.innerHTML = "Size:" + productItem.size;
+    productColor.innerHTML = "Color:";
+    productSize.innerHTML = "Size:";
     productQuantity.innerHTML = "Quantity:";
     productButton.innerHTML = "Remove item";
 
@@ -65,18 +65,3 @@ function createProductElement(productItem) {
 
     return productElement;
 }
-
-function initProductContainer(productObjects, shoppingBag) {
-
-    for (let i = 0; i < productObjects.length; i++) {
-        let productElement = createProductElement(productObjects[i]);
-        shoppingBag.appendChild(productElement);
-    }
-
-    return shoppingBag;
-}
-
-var shoppingBag = document.getElementById("shopping__bag__wrapper");
-
-var productObjects = getProductsFromStorage();
-initProductContainer(productObjects, shoppingBag);

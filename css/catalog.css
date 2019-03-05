@@ -373,11 +373,6 @@
         width: calc(100%/2);
     }
 
-    .catalog__item:nth-child(3),
-    .catalog__item:nth-child(4) {
-        display: none;
-    }
-
     .catalog__btn {
         width: 220px;
         height: 60px;
