@@ -49,7 +49,7 @@
     cursor: pointer;
 }
 
-.item__photos--thumbnail .item__picture:active {
+.active__picture {
     filter: brightness(.4);
 }
 

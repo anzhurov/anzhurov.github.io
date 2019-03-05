@@ -59,6 +59,10 @@
     font: 1rem robotobold, sans-serif;
 }
 
+.shopping__bag__item:hover .shopping__item__title {
+    color: #f14a58;
+}
+
 .shopping__item__price {
     margin-top: 20px;
     font: 1.3rem robotobold, sans-serif;
@@ -77,7 +81,12 @@
     cursor: pointer;
 }
 
-#shopping__info {
+.shopping__bag__item:hover .shopping__item__view__item {
+    opacity: .6;
+}
+
+.shopping__bag__item:hover .shopping__item__view__item__text {
+    opacity: 1;
 }
 
 .shopping__info {
