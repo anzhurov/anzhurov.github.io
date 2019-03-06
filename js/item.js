@@ -83,6 +83,7 @@ addToBagButton.onclick = function (event) {
     let target = event.target;
     let product = JSON.stringify(receivedObject);
     store(product);
+    setShoppingBagContent();
 
     function store(product) {
         let value = storage.getItem(product);

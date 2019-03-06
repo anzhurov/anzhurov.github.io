@@ -2,6 +2,35 @@ var storage = localStorage;
 
 var menuButton = document.querySelector(".mobile-menu");
 var menu = document.getElementById("menu__mobile");
+var totalPriceInShoppingBag = document.getElementById("shopping-bag__total-price");
+var countOfProductsInShoppingBag = document.getElementById("shopping-bag__total-count");
+
+if (storage.length !== null) {
+    setShoppingBagContent(storage, totalPriceInShoppingBag, countOfProductsInShoppingBag);
+} else {
+    totalPriceInShoppingBag.innerHTML = "";
+    countOfProductsInShoppingBag.innerHTML = "(0)";
+}
+
+function setShoppingBagContent(storage, totalPriceInShoppingBag, countOfProductsInShoppingBag) {
+    let price = 0;
+    let count = 0;
+
+    for (let i = 0; i < storage.length; i++) {
+        let key = storage.key(i);
+        let value = storage.getItem(key);
+        let product = JSON.parse(key);
+        price += parseFloat(product.price.slice(1)) * parseInt(value);
+        count += parseInt(value);
+    }
+
+    changeContent();
+
+    function changeContent() {
+        totalPriceInShoppingBag.innerHTML = "£" + price;
+        countOfProductsInShoppingBag.innerHTML = "(" + count + ")";
+    }
+}
 
 menuButton.onclick = function () {
     menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';

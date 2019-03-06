@@ -140,6 +140,25 @@
         width: 100%;
     }
 
+    .item__picture {
+        width: auto;
+    }
+
+    #item__photos--full {
+        width: 520px;
+        height: 350px;
+    }
+
+    #item__photos--full .item__picture {
+        width: 520px;
+        height: 350px;
+    }
+
+    .item__photos--thumbnail .item__picture {
+        width: 175px;
+        height: 115px;
+    }
+
     .item__info {
         width: 70%;
         margin: 0 auto;
