@@ -1,3 +1,8 @@
+var shoppingBag = document.getElementById("shopping__bag__wrapper");
+var productObjects = getProductsFromStorage();
+initProductContainer(productObjects, shoppingBag);
+var productItems = document.querySelectorAll(".shopping__bag__item");
+
 function getProductsFromStorage() {
     let products = [];
 
@@ -11,6 +16,7 @@ function getProductsFromStorage() {
 
 function createProductElement(productItem) {
     let productElement = document.createElement("div");
+    let productID = document.createElement("span")
     let productImageWrapper = document.createElement("div");
     let productImage = document.createElement("img");
     let productViewBlock = document.createElement("div");
@@ -25,6 +31,7 @@ function createProductElement(productItem) {
     let productButton = document.createElement("button");
 
     productElement.classList.add("shopping__bag__item");
+    productID.classList.add("shopping__item__id");
     productImageWrapper.classList.add("shopping__item__image__wrapper");
     productImage.classList.add("shopping__bag__image");
     productViewBlock.classList.add("shopping__item__view__item");
@@ -39,13 +46,18 @@ function createProductElement(productItem) {
     productButton.classList.add("shopping__item__btn");
 
     productImage.setAttribute("alt", "Photo of item");
+    productImage.setAttribute("src", productItem.image);
+
+    productID.style.display = "none";
 
     productTitle.innerHTML = productItem.title;
     productPrice.innerHTML = productItem.price;
-    productColor.innerHTML = "Color:" + productItem.color;
-    productSize.innerHTML = "Size:" + productItem.size;
-    productQuantity.innerHTML = "Quantity:";
+    productColor.innerHTML = "Color: " + productItem.color;
+    productSize.innerHTML = "Size: " + productItem.size;
+    productQuantity.innerHTML = "Quantity: " + getCountOfProduct(JSON.stringify(productItem));
     productButton.innerHTML = "Remove item";
+    productViewText.innerHTML = "View more";
+    productID.innerHTML = productItem.id;
 
     productImageWrapper.appendChild(productImage);
     productImageWrapper.appendChild(productViewBlock);
@@ -60,6 +72,7 @@ function createProductElement(productItem) {
     productInfoBlock.appendChild(productFiltersBlock);
     productInfoBlock.appendChild(productButton);
 
+    productElement.appendChild(productID);
     productElement.appendChild(productImageWrapper);
     productElement.appendChild(productInfoBlock);
 
@@ -76,7 +89,9 @@ function initProductContainer(productObjects, shoppingBag) {
     return shoppingBag;
 }
 
-var shoppingBag = document.getElementById("shopping__bag__wrapper");
-
-var productObjects = getProductsFromStorage();
-initProductContainer(productObjects, shoppingBag);
+for (let i = 0; i < productItems.length; i++) {
+    productItems[i].onclick = function () {
+        let productID = productItems[i].firstChild;
+        location.href = "item.html" + "?id=" + productID.innerHTML;
+    };
+}

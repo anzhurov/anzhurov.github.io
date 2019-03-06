@@ -79,11 +79,10 @@ setBorderHighlightEventsOnButtons(sizeButtons);
 setBorderHighlightEventsOnButtons(colorButtons);
 replacePhotos();
 
-addToBagButton.onclick = function (event) {
-    let target = event.target;
+addToBagButton.onclick = function () {
     let product = JSON.stringify(receivedObject);
     store(product);
-    setShoppingBagContent();
+    updateShoppingBagContent();
 
     function store(product) {
         let value = storage.getItem(product);

@@ -4,25 +4,21 @@ var menuButton = document.querySelector(".mobile-menu");
 var menu = document.getElementById("menu__mobile");
 var totalPriceInShoppingBag = document.getElementById("shopping-bag__total-price");
 var countOfProductsInShoppingBag = document.getElementById("shopping-bag__total-count");
+setShoppingBagContent();
 
-if (storage.length !== null) {
-    setShoppingBagContent(storage, totalPriceInShoppingBag, countOfProductsInShoppingBag);
-} else {
-    totalPriceInShoppingBag.innerHTML = "";
-    countOfProductsInShoppingBag.innerHTML = "(0)";
+function setShoppingBagContent() {
+    if (storage.length !== null) {
+        updateShoppingBagContent();
+    } else {
+        totalPriceInShoppingBag.innerHTML = "";
+        countOfProductsInShoppingBag.innerHTML = "(0)";
+    }
 }
 
-function setShoppingBagContent(storage, totalPriceInShoppingBag, countOfProductsInShoppingBag) {
-    let price = 0;
-    let count = 0;
+function updateShoppingBagContent() {
 
-    for (let i = 0; i < storage.length; i++) {
-        let key = storage.key(i);
-        let value = storage.getItem(key);
-        let product = JSON.parse(key);
-        price += parseFloat(product.price.slice(1)) * parseInt(value);
-        count += parseInt(value);
-    }
+    let price = getTotalPriceOfProductsFromStore();
+    let count = getCountOfProductsFromStore();
 
     changeContent();
 
@@ -30,6 +26,32 @@ function setShoppingBagContent(storage, totalPriceInShoppingBag, countOfProducts
         totalPriceInShoppingBag.innerHTML = "£" + price;
         countOfProductsInShoppingBag.innerHTML = "(" + count + ")";
     }
+}
+
+function getCountOfProductsFromStore() {
+    let count = 0;
+
+    for (let i = 0; i < storage.length; i++) {
+        let key = storage.key(i);
+        count += getCountOfProduct(key);
+    }
+    return count;
+}
+
+function getTotalPriceOfProductsFromStore() {
+    let price = 0;
+
+    for (let i = 0; i < storage.length; i++) {
+        let key = storage.key(i);
+        let value = storage.getItem(key);
+        let product = JSON.parse(key);
+        price += parseFloat(product.price.slice(1)) * parseInt(value);
+    }
+    return price;
+}
+
+function getCountOfProduct(product) {
+    return parseInt(storage.getItem(product));
 }
 
 menuButton.onclick = function () {
