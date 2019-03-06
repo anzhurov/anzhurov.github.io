@@ -8,13 +8,13 @@ menuButton.onclick = function () {
 };
 
 class Product {
-    constructor(id, title, price, color, productSize, fashion, productType, brand, image, additionalInfo,
+    constructor(id, title, price, color, size, fashion, productType, brand, image, additionalInfo,
                 additionalClasses) {
         this.id = id;
         this.title = title;
         this.price = price;
         this.color = color;
-        this.productSize = productSize;
+        this.size = size;
         this.fashion = fashion;
         this.productType = productType;
         this.brand = brand;

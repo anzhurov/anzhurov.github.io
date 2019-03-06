@@ -11,7 +11,7 @@
     height: 65px;
 }
 
-.filter__list {
+#filter__list {
     display: flex;
     justify-content: space-between;
     margin: 0;
@@ -88,23 +88,17 @@
 
 .filter__button__dropdown {
     padding: 0 10px 0 10px;
+    font-size: .9rem;
+    line-height: 2rem;
 }
 
 .filter__button__dropdown:hover {
     background-color: #f7f7f7;
-}
-
-.filter__button__dropdown:hover .filter__button__dropdown__item {
     color: #f14a58;
 }
 
 .filter__button__dropdown:last-child {
     padding-bottom: 0;
-}
-
-.filter__button__dropdown__item {
-    font-size: .9rem;
-    line-height: 2rem;
 }
 
 .filter__button:hover .filter__list__dropdown {
@@ -205,7 +199,7 @@
         display: block;
     }
 
-    .filter__list {
+    #filter__list {
         display: none;
     }
 
@@ -282,7 +276,7 @@
         position: relative;
     }
 
-    .filter__list {
+    #filter__list {
         display: none;
     }
 

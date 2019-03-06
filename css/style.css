@@ -418,6 +418,7 @@ header {
 .arrivals__item__title,
 .catalog__item__title {
     margin-top: 45px;
+    padding: 0 30px 0 30px;
 }
 
 .arrivals__item__image__wrapper,

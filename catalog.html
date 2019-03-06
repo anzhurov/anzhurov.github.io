@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/catalog.css">
+    <script src="js/libs/lodash.js" defer></script>
     <script src="js/common.js" defer></script>
     <script src="js/catalog.js" defer></script>
 </head>
@@ -62,7 +63,7 @@
 <section id="filter">
     <div class="content-wrapper">
         <div class="filter__wrapper">
-            <ul class="filter__list">
+            <ul id="filter__list">
                 <li class="filter__button">
                     <div class="filter__button__text">
                         <h3 class="filter__button__title">Fashion</h3>
@@ -70,27 +71,13 @@
                     </div>
                     <img src="./img/icons/filter_arrow.png" alt="Arrow icon" class="filter__button__icon">
                     <ul class="filter__list__dropdown">
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Not selected</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Nail the 90s</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Casual style</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">New Look</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Sport</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Vintage</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Classical style</a>
-                        </li>
+                        <li class="filter__button__dropdown ">Not selected</li>
+                        <li class="filter__button__dropdown">Nail the 90s</li>
+                        <li class="filter__button__dropdown">Casual style</li>
+                        <li class="filter__button__dropdown">New Look</li>
+                        <li class="filter__button__dropdown">Sport</li>
+                        <li class="filter__button__dropdown">Vintage</li>
+                        <li class="filter__button__dropdown">Classical style</li>
                     </ul>
                 </li>
                 <li class="filter__button">
@@ -100,18 +87,10 @@
                     </div>
                     <img src="./img/icons/filter_arrow.png" alt="Arrow icon" class="filter__button__icon">
                     <ul class="filter__list__dropdown">
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Not selected</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Coats & Jackets</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Dresses</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Jersey Tops</a>
-                        </li>
+                        <li class="filter__button__dropdown">Not selected</li>
+                        <li class="filter__button__dropdown">Coats & Jackets</li>
+                        <li class="filter__button__dropdown">Dresses</li>
+                        <li class="filter__button__dropdown">Jersey Tops</li>
                     </ul>
                 </li>
                 <li class="filter__button">
@@ -121,24 +100,12 @@
                     </div>
                     <img src="./img/icons/filter_arrow.png" alt="Arrow icon" class="filter__button__icon">
                     <ul class="filter__list__dropdown">
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Not selected</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Black</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Blue</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Red</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Green</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Golden</a>
-                        </li>
+                        <li class="filter__button__dropdown">Not selected</li>
+                        <li class="filter__button__dropdown">Black</li>
+                        <li class="filter__button__dropdown">Blue</li>
+                        <li class="filter__button__dropdown">Red</li>
+                        <li class="filter__button__dropdown">Green</li>
+                        <li class="filter__button__dropdown">Golden</li>
                     </ul>
                 </li>
                 <li class="filter__button">
@@ -148,24 +115,12 @@
                     </div>
                     <img src="./img/icons/filter_arrow.png" alt="Arrow icon" class="filter__button__icon">
                     <ul class="filter__list__dropdown">
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Not selected</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Chi Chi London</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Antipodium</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Adidas</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">New Balance</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">River Island</a>
-                        </li>
+                        <li class="filter__button__dropdown">Not selected</li>
+                        <li class="filter__button__dropdown">Chi Chi London</li>
+                        <li class="filter__button__dropdown">Antipodium</li>
+                        <li class="filter__button__dropdown">Adidas</li>
+                        <li class="filter__button__dropdown">New Balance</li>
+                        <li class="filter__button__dropdown">River Island</li>
                     </ul>
                 </li>
                 <li class="filter__button">
@@ -175,33 +130,15 @@
                     </div>
                     <img src="./img/icons/filter_arrow.png" alt="Arrow icon" class="filter__button__icon">
                     <ul class="filter__list__dropdown">
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Not selected</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">UK 2</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">UK 18</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">UK 18L</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">UK 20</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">UK 20L</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">UK 20S</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">UK 22S</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">UK 22</a>
-                        </li>
+                        <li class="filter__button__dropdown">Not selected</li>
+                        <li class="filter__button__dropdown">UK 2</li>
+                        <li class="filter__button__dropdown">UK 18</li>
+                        <li class="filter__button__dropdown">UK 18L</li>
+                        <li class="filter__button__dropdown">UK 20</li>
+                        <li class="filter__button__dropdown">UK 20L</li>
+                        <li class="filter__button__dropdown">UK 20S</li>
+                        <li class="filter__button__dropdown">UK 22S</li>
+                        <li class="filter__button__dropdown">UK 22</li>
                     </ul>
                 </li>
                 <li class="filter__button">
@@ -211,18 +148,10 @@
                     </div>
                     <img src="./img/icons/filter_arrow.png" alt="Arrow icon" class="filter__button__icon">
                     <ul class="filter__list__dropdown">
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">Not selected</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">To £99</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">£100-£299</a>
-                        </li>
-                        <li class="filter__button__dropdown">
-                            <a href="#" class="filter__button__dropdown__item">From £300</a>
-                        </li>
+                        <li class="filter__button__dropdown">Not selected</li>
+                        <li class="filter__button__dropdown">To £99</li>
+                        <li class="filter__button__dropdown">£100-£299</li>
+                        <li class="filter__button__dropdown">From £300</li>
                     </ul>
                 </li>
             </ul>
@@ -336,42 +265,6 @@
     <section id="catalog">
         <div class="content-wrapper">
             <div id="catalog__items__wrapper--top" class="catalog catalog__items__wrapper">
-                <!--<figure class="catalog__item">-->
-                    <!--<div class="catalog__item__image__wrapper">-->
-                        <!--<img src="./img/catalog/1.jpg" alt="Image of catalog item" class="catalog__item__image">-->
-                        <!--<div class="catalog__item__view__item"></div>-->
-                        <!--<h3 class="catalog__item__view__item__text">View item</h3>-->
-                    <!--</div>-->
-                    <!--<h4 class="catalog__item__title">Straight Leg Jeans</h4>-->
-                    <!--<p class="catalog__item__price">£55.00</p>-->
-                <!--</figure>-->
-                <!--<figure class="catalog__item">-->
-                    <!--<div class="catalog__item__image__wrapper">-->
-                        <!--<img src="./img/catalog/2.jpg" alt="Image of catalog item" class="catalog__item__image">-->
-                        <!--<div class="catalog__item__view__item"></div>-->
-                        <!--<h3 class="catalog__item__view__item__text">View item</h3>-->
-                    <!--</div>-->
-                    <!--<h4 class="catalog__item__title">Straight Leg Jeans</h4>-->
-                    <!--<p class="catalog__item__price">£55.00</p>-->
-                <!--</figure>-->
-                <!--<figure class="catalog__item">-->
-                    <!--<div class="catalog__item__image__wrapper">-->
-                        <!--<img src="./img/catalog/3.jpg" alt="Image of catalog item" class="catalog__item__image">-->
-                        <!--<div class="catalog__item__view__item"></div>-->
-                        <!--<h3 class="catalog__item__view__item__text">View item</h3>-->
-                    <!--</div>-->
-                    <!--<h4 class="catalog__item__title">Straight Leg Jeans</h4>-->
-                    <!--<p class="catalog__item__price">£55.00</p>-->
-                <!--</figure>-->
-                <!--<figure class="catalog__item tablet__hidden">-->
-                    <!--<div class="catalog__item__image__wrapper">-->
-                        <!--<img src="./img/catalog/4.jpg" alt="Image of catalog item" class="catalog__item__image">-->
-                        <!--<div class="catalog__item__view__item"></div>-->
-                        <!--<h3 class="catalog__item__view__item__text">View item</h3>-->
-                    <!--</div>-->
-                    <!--<h4 class="catalog__item__title">Straight Leg Jeans</h4>-->
-                    <!--<p class="catalog__item__price">£55.00</p>-->
-                <!--</figure>-->
             </div>
             <aside class="catalog__additive__info">
                 <h2 class="catalog__additive__info__caption">Last weekend
@@ -383,90 +276,6 @@
             </aside>
             <div class="catalog">
                 <div id="catalog__items__wrapper--bottom" class="catalog__items__wrapper">
-                    <!--<figure class="catalog__item tablet__view">-->
-                        <!--<div class="catalog__item__image__wrapper">-->
-                            <!--<img src="./img/catalog/4.jpg" alt="Image of catalog item" class="catalog__item__image">-->
-                            <!--<div class="catalog__item__view__item"></div>-->
-                            <!--<h3 class="catalog__item__view__item__text">View item</h3>-->
-                        <!--</div>-->
-                        <!--<h4 class="catalog__item__title">Straight Leg Jeans</h4>-->
-                        <!--<p class="catalog__item__price">£55.00</p>-->
-                    <!--</figure>-->
-                    <!--<figure class="catalog__item">-->
-                        <!--<div class="catalog__item__image__wrapper">-->
-                            <!--<img src="./img/catalog/5.jpg" alt="Image of catalog item" class="catalog__item__image">-->
-                            <!--<div class="catalog__item__view__item"></div>-->
-                            <!--<h3 class="catalog__item__view__item__text">View item</h3>-->
-                        <!--</div>-->
-                        <!--<h4 class="catalog__item__title">Levi’s Jeans for women</h4>-->
-                        <!--<span class="catalog__additive__info__text text__color&#45;&#45;gray">More colours</span>-->
-                    <!--</figure>-->
-                    <!--<figure class="catalog__item">-->
-                        <!--<div class="catalog__item__image__wrapper">-->
-                            <!--<img src="./img/catalog/6.jpg" alt="Image of catalog item" class="catalog__item__image">-->
-                            <!--<div class="catalog__item__view__item"></div>-->
-                            <!--<h3 class="catalog__item__view__item__text">View item</h3>-->
-                        <!--</div>-->
-                        <!--<h4 class="catalog__item__title">Boyfriend T-Shirt with Bohemian Print</h4>-->
-                        <!--<span class="catalog__item__price text__color&#45;&#45;gray">£120.00</span>-->
-                        <!--<span class="catalog__additive__info__text text__color&#45;&#45;gray">-25%</span>-->
-                        <!--<span class="catalog__item__price ">£90.00</span>-->
-                    <!--</figure>-->
-                    <!--<figure class="catalog__item">-->
-                        <!--<div class="catalog__item__image__wrapper">-->
-                            <!--<img src="./img/catalog/7.jpg" alt="Image of catalog item" class="catalog__item__image">-->
-                            <!--<div class="catalog__item__view__item"></div>-->
-                            <!--<h3 class="catalog__item__view__item__text">View item</h3>-->
-                        <!--</div>-->
-                        <!--<h4 class="catalog__item__title">Colour Block</h4>-->
-                        <!--<span class="catalog__item__price">£550.50</span>-->
-                    <!--</figure>-->
-                    <!--<figure class="catalog__item">-->
-                        <!--<div class="catalog__item__image__wrapper">-->
-                            <!--<img src="./img/catalog/8.jpg" alt="Image of catalog item" class="catalog__item__image">-->
-                            <!--<div class="catalog__item__view__item"></div>-->
-                            <!--<h3 class="catalog__item__view__item__text">View item</h3>-->
-                        <!--</div>-->
-                        <!--<h4 class="catalog__item__title">Monki Festval Knitted</h4>-->
-                        <!--<span class="catalog__item__price">£24.75</span>-->
-                    <!--</figure>-->
-                    <!--<figure class="catalog__item">-->
-                        <!--<div class="catalog__item__image__wrapper">-->
-                            <!--<img src="./img/catalog/9.jpg" alt="Image of catalog item" class="catalog__item__image">-->
-                            <!--<div class="catalog__item__view__item"></div>-->
-                            <!--<h3 class="catalog__item__view__item__text">View item</h3>-->
-                        <!--</div>-->
-                        <!--<h4 class="catalog__item__title">Oversized Cardigan</h4>-->
-                        <!--<span class="catalog__item__price">£90.00</span>-->
-                    <!--</figure>-->
-                    <!--<figure class="catalog__item">-->
-                        <!--<div class="catalog__item__image__wrapper">-->
-                            <!--<img src="./img/catalog/10.jpg" alt="Image of catalog item" class="catalog__item__image">-->
-                            <!--<div class="catalog__item__view__item"></div>-->
-                            <!--<h3 class="catalog__item__view__item__text">View item</h3>-->
-                        <!--</div>-->
-                        <!--<h4 class="catalog__item__title">Paul & Joe Sister Jumper with Neon Trims</h4>-->
-                        <!--<span class="catalog__item__price">£19.75</span>-->
-                        <!--<span class="catalog__additive__info__text text__color&#45;&#45;gray">New</span>-->
-                    <!--</figure>-->
-                    <!--<figure class="catalog__item">-->
-                        <!--<div class="catalog__item__image__wrapper">-->
-                            <!--<img src="./img/catalog/11.jpg" alt="Image of catalog item" class="catalog__item__image">-->
-                            <!--<div class="catalog__item__view__item"></div>-->
-                            <!--<h3 class="catalog__item__view__item__text">View item</h3>-->
-                        <!--</div>-->
-                        <!--<h4 class="catalog__item__title">Only Busted Knee Jean</h4>-->
-                        <!--<span class="catalog__item__price">£140.50</span>-->
-                    <!--</figure>-->
-                    <!--<figure class="catalog__item">-->
-                        <!--<div class="catalog__item__image__wrapper">-->
-                            <!--<img src="./img/catalog/12.jpg" alt="Image of catalog item" class="catalog__item__image">-->
-                            <!--<div class="catalog__item__view__item"></div>-->
-                            <!--<h3 class="catalog__item__view__item__text">View item</h3>-->
-                        <!--</div>-->
-                        <!--<h4 class="catalog__item__title">Boyfriend T-Shirt with Bohemian Print</h4>-->
-                        <!--<p class="catalog__item__price">£85.75</p>-->
-                    <!--</figure>-->
                 </div>
                 <button class="catalog__btn">Show more</button>
             </div>
