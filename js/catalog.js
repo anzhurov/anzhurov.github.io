@@ -109,18 +109,16 @@ var productsBottom = productObjects.slice(4, 14);
 initCatalogContainer(productsTop, catalogContainerTop);
 initCatalogContainer(productsBottom, catalogContainerBottom);
 
-var productItems = [...document.querySelectorAll(".catalog__item")];
-
 filterItem.forEach(function (item) {
     item.onclick = function (event) {
         let target = event.target;
         let productItems = document.querySelectorAll(".catalog__item");
         let productID = productItems[0].firstChild;
+        let text = target.parentElement.parentElement.children[0].children[1];
+        text.innerText = "";
         let categoryName = target.parentElement.parentElement.children[0].innerText;
         let filterName = target.innerText;
-        let text = target.parentElement.parentElement.children[0].children[1];
         if (filterName === "Not selected") {
-            text.innerText = "";
             clear();
             initCatalogContainer(productsTop, catalogContainerTop);
             initCatalogContainer(productsBottom, catalogContainerBottom);
@@ -153,4 +151,12 @@ function showElements(productItems, arr) {
 
 function filterProductElement(productObjects, categoryName, filterName) {
     return _.filter(productObjects, [categoryName.toLowerCase(), filterName]);
+}
+
+var productItems = document.querySelectorAll(".catalog__item");
+for (let i = 0; i < productItems.length; i++) {
+    productItems[i].onclick = function () {
+        let productID = productItems[i].firstChild;
+        location.href = "item.html" + "?id=" + productID.innerHTML;
+    };
 }
