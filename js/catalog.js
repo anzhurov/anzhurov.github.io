@@ -1,12 +1,12 @@
-var filterContent = document.getElementById("filter");
+var filterPanel = document.getElementById("filter");
 var filterValuesDesktop = document.querySelectorAll(".filter__button__dropdown");
 var filterValuesTablet = document.querySelectorAll(".category__item");
-var category = document.getElementById("category--tablet");
-var catalogContainerTop = document.getElementById("catalog__items__wrapper--top");
-var catalogContainerBottom = document.getElementById("catalog__items__wrapper--bottom");
+var filterContainerTablet = document.getElementById("category--tablet");
+var catalogTopLineBlock = document.getElementById("catalog__items__wrapper--top");
+var catalogBottomLineBlock = document.getElementById("catalog__items__wrapper--bottom");
 var glassIcon = document.querySelector(".tablet__glass");
 var selectedFilterValues = {};
-var map = {
+var objectFieldMap = {
     "Fashion": "fashion",
     "Product type": "productType",
     "Color": "color",
@@ -15,37 +15,19 @@ var map = {
     "Price rang": "price"
 };
 
-filterContent.onclick = function () {
-    if (category.classList.contains("tablet__hidden")) {
-        category.classList.replace("tablet__hidden", "tablet__view");
-    } else {
-        category.classList.replace("tablet__view", "tablet__hidden");
-    }
-};
-
-glassIcon.onclick = function () {
-    let search__input = glassIcon.previousElementSibling;
-    if (search__input.style.display === "none") {
-        search__input.style.display = "block";
-    } else {
-        search__input.style.display = "none";
-    }
-};
-
-
-function createProductElement(productItem) {
+function createProductElement(productObject) {
     let productElement = document.createElement("figure");
     let productImageWrapper = document.createElement("div");
     let productImage = document.createElement("img");
     let productViewBlock = document.createElement("div");
     let productViewText = document.createElement("h3");
     let productTitle = document.createElement("h4");
-    let productID = document.createElement("span");
-    let productPrice = initProductPriceElement(productItem.additionalInfo, productItem.price);
+    let productId = document.createElement("span");
+    let productPrice = initProductPriceElement(productObject.additionalInfo, productObject.price);
 
     productElement.classList.add("catalog__item");
-    if (productItem.additionalClasses.length !== 0) {
-        productElement.classList.add(productItem.additionalClasses);
+    if (productObject.additionalClasses.length !== 0) {
+        productElement.classList.add(productObject.additionalClasses);
     }
 
     productImageWrapper.classList.add("catalog__item__image__wrapper");
@@ -54,22 +36,22 @@ function createProductElement(productItem) {
     productViewText.classList.add("catalog__item__view__item__text");
     productTitle.classList.add("catalog__item__title");
     productPrice.classList.add("catalog__item__price");
-    productID.classList.add("catalog__item__id");
+    productId.classList.add("catalog__item__id");
 
     productImage.setAttribute("alt", "Image of catalog item");
-    productImage.setAttribute("src", productItem.image);
+    productImage.setAttribute("src", productObject.image);
 
-    productID.style.display = "none";
+    productId.style.display = "none";
 
-    productTitle.innerHTML = productItem.title;
+    productTitle.innerHTML = productObject.title;
     productViewText.innerHTML = "View item";
-    productID.innerHTML = productItem.id;
+    productId.innerHTML = productObject.id;
 
     productImageWrapper.appendChild(productImage);
     productImageWrapper.appendChild(productViewBlock);
     productImageWrapper.appendChild(productViewText);
 
-    productElement.appendChild(productID);
+    productElement.appendChild(productId);
     productElement.appendChild(productImageWrapper);
     productElement.appendChild(productTitle);
     productElement.appendChild(productPrice);
@@ -77,61 +59,58 @@ function createProductElement(productItem) {
     return productElement;
 
     function initProductPriceElement(additionalInfo, itemPrice) {
+        let percentRegexp = "-\\d+%";
         let productPriceElement = document.createElement("p");
-        let currentPriceElement = document.createElement("span");
-        currentPriceElement.classList.add("catalog__item__price");
-        currentPriceElement.innerHTML = itemPrice;
+        let currentPriceElement = initCurrentPriceElement();
+
         productPriceElement.appendChild(currentPriceElement);
 
-        let percentRegexp = "-\\d+%";
         if (!additionalInfo.match(percentRegexp)) {
-            let additionalInfoElement = document.createElement("span");
-            additionalInfoElement.classList.add("catalog__additive__info__text");
-            additionalInfoElement.classList.add("text__color--gray");
-            additionalInfoElement.innerHTML = additionalInfo;
+            let additionalInfoElement = initAdditionalInfoElement();
 
             productPriceElement.appendChild(additionalInfoElement);
             return productPriceElement;
         }
 
         let percents = parseInt(additionalInfo.replace("-", "").replace("%", ""));
-        let currentPrice = parseInt(itemPrice.replace("£", ""));
-
-        let oldPriceElement = document.createElement("span");
-        oldPriceElement.classList.add("catalog__item__price", "text__color--gray");
-        oldPriceElement.innerHTML = "£" + (currentPrice * 100 / (100 - percents)).toFixed(2);
-
-        let percentsElement = document.createElement("span");
-        percentsElement.classList.add("catalog__additive__info__text", "text__color--gray");
-        percentsElement.innerHTML = "-" + percents.toString() + "%";
+        let oldPriceElement = initOldPriceElement();
+        let percentsElement = initPercentsElement();
 
         productPriceElement.insertBefore(percentsElement, currentPriceElement);
         productPriceElement.insertBefore(oldPriceElement, percentsElement);
-
         return productPriceElement;
-    }
-}
 
-var onClickFilterFunction = function (item) {
-    item.onclick = function (event) {
-        let products = document.querySelectorAll(".catalog__item");
-        let target = event.target;
-        let selectedFilterValueElement = target.parentElement.parentElement.children[0].children[1];
-        let filterTitle = target.parentElement.parentElement.children[0].children[0].innerText;
-        let selectedFilterValue = target.innerText;
-        if (selectedFilterValue === "Not selected") {
-            delete selectedFilterValues[filterTitle];
-            selectedFilterValueElement.innerText = "";
-        } else {
-            selectedFilterValueElement.innerText = selectedFilterValue;
-            selectedFilterValues[filterTitle] = selectedFilterValue;
+        function initCurrentPriceElement() {
+            let currentPriceElement = document.createElement("span");
+            currentPriceElement.classList.add("catalog__item__price");
+            currentPriceElement.innerHTML = itemPrice;
+            return currentPriceElement;
         }
 
-        let filteredProducts = filterProductElements(productObjects, selectedFilterValues);
-        hideElements(products);
-        showElements(products, filteredProducts);
+        function initAdditionalInfoElement() {
+            let additionalInfoElement = document.createElement("span");
+            additionalInfoElement.classList.add("catalog__additive__info__text");
+            additionalInfoElement.classList.add("text__color--gray");
+            additionalInfoElement.innerHTML = additionalInfo;
+            return additionalInfoElement;
+        }
+
+        function initOldPriceElement() {
+            let oldPriceElement = document.createElement("span");
+            let currentPrice = parseInt(itemPrice.replace("£", ""));
+            oldPriceElement.classList.add("catalog__item__price", "text__color--gray");
+            oldPriceElement.innerHTML = "£" + (currentPrice * 100 / (100 - percents)).toFixed(2);
+            return oldPriceElement;
+        }
+
+        function initPercentsElement() {
+            let percentsElement = document.createElement("span");
+            percentsElement.classList.add("catalog__additive__info__text", "text__color--gray");
+            percentsElement.innerHTML = "-" + percents.toString() + "%";
+            return percentsElement;
+        }
     }
-};
+}
 
 function hideElements(elements) {
     for (let i = 0; i < elements.length; i++) {
@@ -141,9 +120,9 @@ function hideElements(elements) {
 
 function showElements(productItems, filteredProducts) {
     for (let i = 0; i < productItems.length; i++) {
-        const child = productItems[i].firstChild;
+        const productIdElement = productItems[i].firstChild;
         for (let j = 0; j < filteredProducts.length; j++) {
-            if (filteredProducts[j].id.toString() === child.innerHTML) {
+            if (filteredProducts[j].id.toString() === productIdElement.innerHTML) {
                 let itemClassList = productItems[i].classList;
                 if (!itemClassList.contains("tablet__view") && !itemClassList.contains("mobile__view")) {
                     productItems[i].style.display = "block";
@@ -189,35 +168,77 @@ function filterProductElements(productObjects, selectedFilterValues) {
                 return productPrice >= parseFloat(range.replace("From ", ""));
             }
         }
-
-        console.log(range);
     }
 
     function transformToObjectField(selectedFilterValue) {
-        return map[selectedFilterValue];
+        return objectFieldMap[selectedFilterValue];
     }
 }
 
+function initFilterValuesListeners(values) {
+    for (let i = 0; i < values.length; i++) {
+        values[i] = onClickFilterFunction(values[i]);
+    }
+}
+
+function initProductItemsListeners() {
+    for (let i = 0; i < productItems.length; i++) {
+        productItems[i].onclick = function () {
+            let productID = this.firstChild;
+            location.href = "item.html" + "?id=" + productID.innerHTML;
+        };
+    }
+}
+
+filterPanel.onclick = function () {
+    if (filterContainerTablet.classList.contains("tablet__hidden")) {
+        filterContainerTablet.classList.replace("tablet__hidden", "tablet__view");
+    } else {
+        filterContainerTablet.classList.replace("tablet__view", "tablet__hidden");
+    }
+};
+
+glassIcon.onclick = function () {
+    let search__input = glassIcon.previousElementSibling;
+    if (!search__input.style.display || search__input.style.display === "none") {
+        search__input.style.display = "block";
+    } else {
+        search__input.style.display = "none";
+    }
+};
+
+var onClickFilterFunction = function (item) {
+    item.onclick = function (event) {
+        let target = event.target;
+        let selectedFilterValue = target.innerText;
+        let products = document.querySelectorAll(".catalog__item");
+
+        let selectedFilterValueElement = target.parentElement.parentElement.children[0].children[1];
+        let filterTitle = target.parentElement.parentElement.children[0].children[0].innerText;
+
+        if (selectedFilterValue === "Not selected") {
+            delete selectedFilterValues[filterTitle];
+            selectedFilterValueElement.innerText = "";
+        } else {
+            selectedFilterValueElement.innerText = selectedFilterValue;
+            selectedFilterValues[filterTitle] = selectedFilterValue;
+        }
+
+        let filteredProducts = filterProductElements(productObjects, selectedFilterValues);
+        hideElements(products);
+        showElements(products, filteredProducts);
+    }
+};
+
 var productObjects = initProductArray();
-var productsTop = productObjects.slice(0, 4);
-var productsBottom = productObjects.slice(4, 14);
-initCatalogContainer(productsTop, catalogContainerTop);
-initCatalogContainer(productsBottom, catalogContainerBottom);
-
-for (let i = 0; i < filterValuesDesktop.length; i++) {
-    filterValuesDesktop[i] = onClickFilterFunction(filterValuesDesktop[i]);
-}
-
-for (let i = 0; i < filterValuesTablet.length; i++) {
-    filterValuesTablet[i] = onClickFilterFunction(filterValuesTablet[i]);
-}
+var topProducts = productObjects.slice(0, 4);
+var bottomProducts = productObjects.slice(4, 14);
+initCatalogContainer(topProducts, catalogTopLineBlock);
+initCatalogContainer(bottomProducts, catalogBottomLineBlock);
+initFilterValuesListeners(filterValuesTablet);
+initFilterValuesListeners(filterValuesDesktop);
 
 var productItems = document.querySelectorAll(".catalog__item");
-for (let i = 0; i < productItems.length; i++) {
-    productItems[i].onclick = function () {
-        let productID = this.firstChild;
-        location.href = "item.html" + "?id=" + productID.innerHTML;
-    };
-}
+initProductItemsListeners();
 
 

@@ -263,7 +263,7 @@ function initProductArray() {
         "Sport",
         "Coats & Jackets",
         "New Balance",
-        "./img/arrivals/item2.jpg",
+        "./img/catalog/13.jpg",
         "",
         ""));
 
