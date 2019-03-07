@@ -10,53 +10,7 @@ var timerId = initSliderTimer();
 
 var productObjects = initProductArray();
 var arrivalObjects = [productObjects[2], productObjects[14], productObjects[10], productObjects[1]];
-addObjectsToContainer(arrivalObjects, arrivalsContent);
 var arrivalsElements = document.querySelectorAll(".arrivals__item");
-
-
-mainContent.onclick = function (event) {
-    let target = event.target;
-    while (target !== mainContent) {
-        if (target === arrowLeft) {
-            clearInterval(timerId);
-            showPreviousSlide();
-            timerId = initSliderTimer();
-            return;
-        }
-        if (target === arrowRight) {
-            clearInterval(timerId);
-            showNextSlide();
-            timerId = initSliderTimer();
-            return;
-        }
-        for (let i = 0; i < dots.length; i++) {
-            if (target === dots.item(i)) {
-                clearInterval(timerId);
-                showSlideByIndex(++i);
-                timerId = initSliderTimer();
-                return;
-            }
-        }
-        for (let i = 0; i < arrivalsElements.length; i++) {
-            if (target === arrivalsElements[i]) {
-                let productID = arrivalsElements[i].firstChild;
-                location.href = "item.html" + "?id=" + productID.innerHTML;
-                return;
-            }
-        }
-
-        target = target.parentNode;
-    }
-
-    function showPreviousSlide() {
-        showSlide(--currentSlideIndex);
-    }
-
-    function showSlideByIndex(index) {
-        currentSlideIndex = index;
-        showSlide(currentSlideIndex);
-    }
-};
 
 function showNextSlide() {
     showSlide(++currentSlideIndex);
@@ -132,6 +86,56 @@ function createProductElement(productItem) {
 
     return productElement;
 }
+
+function addMainContentDelegatedListener() {
+    mainContent.onclick = function (event) {
+        let target = event.target;
+        while (target !== mainContent) {
+            if (target === arrowLeft) {
+                clearInterval(timerId);
+                showPreviousSlide();
+                timerId = initSliderTimer();
+                return;
+            }
+            if (target === arrowRight) {
+                clearInterval(timerId);
+                showNextSlide();
+                timerId = initSliderTimer();
+                return;
+            }
+            for (let i = 0; i < dots.length; i++) {
+                if (target === dots.item(i)) {
+                    clearInterval(timerId);
+                    showSlideByIndex(++i);
+                    timerId = initSliderTimer();
+                    return;
+                }
+            }
+            for (let i = 0; i < arrivalsElements.length; i++) {
+                if (target === arrivalsElements[i]) {
+                    let productID = arrivalsElements[i].firstChild;
+                    location.href = "item.html" + "?id=" + productID.innerHTML;
+                    return;
+                }
+            }
+
+            target = target.parentNode;
+        }
+
+        function showPreviousSlide() {
+            showSlide(--currentSlideIndex);
+        }
+
+        function showSlideByIndex(index) {
+            currentSlideIndex = index;
+            showSlide(currentSlideIndex);
+        }
+    };
+}
+
+addObjectsToContainer(arrivalObjects, arrivalsContent);
+addMainContentDelegatedListener();
+
 
 
 
