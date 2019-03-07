@@ -58,21 +58,18 @@ menuButton.onclick = function () {
     menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
 };
 
-class Product {
-    constructor(id, title, price, color, size, fashion, productType, brand, image, additionalInfo,
-                additionalClasses) {
-        this.id = id;
-        this.title = title;
-        this.price = price;
-        this.color = color;
-        this.size = size;
-        this.fashion = fashion;
-        this.productType = productType;
-        this.brand = brand;
-        this.image = image;
-        this.additionalInfo = additionalInfo;
-        this.additionalClasses = additionalClasses;
-    }
+function Product(id, title, price, color, size, fashion, productType, brand, image, additionalInfo, additionalClasses) {
+    this.id = id;
+    this.title = title;
+    this.price = price;
+    this.color = color;
+    this.size = size;
+    this.fashion = fashion;
+    this.productType = productType;
+    this.brand = brand;
+    this.image = image;
+    this.additionalInfo = additionalInfo;
+    this.additionalClasses = additionalClasses;
 }
 
 function initProductArray() {
@@ -82,8 +79,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "Only skinny jeans",
         "£65.00",
-        "Black",
-        "UK 20",
+        ["Black", "Gold"],
+        ["UK 20", "UK 20L"],
         "New Look",
         "Jersey Tops",
         "New Balance",
@@ -93,8 +90,9 @@ function initProductArray() {
 
     products.push(new Product(++id,
         "Neck Knitted Jumper",
-        "£76.25", "Green",
-        "UK 18",
+        "£76.25",
+        ["Green","Black", "Gold"],
+        ["UK 18"],
         "Nail the 90s",
         "Coats & Jackets",
         "Chi Chi London",
@@ -105,8 +103,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "Turtle Neck Jumper in Rib",
         "£130.25",
-        "Green",
-        "UK 22S",
+        ["Green"],
+        ["UK 18","UK 22S"],
         "Classical style",
         "Coats & Jackets",
         "Antipodium",
@@ -117,8 +115,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "With Patchwork Crochet",
         "£80.60",
-        "Red",
-        "UK 20S",
+        ["Green","Red"],
+        ["UK 18","UK 22S","UK 20S"],
         "Casual style",
         "Dresses",
         "River Island",
@@ -129,8 +127,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "Turtle Neck Jumper in Rib",
         "£130.25",
-        "Green",
-        "UK 22S",
+        ["Green"],
+        ["UK 22S"],
         "Classical style",
         "Coats & Jackets",
         "Antipodium",
@@ -141,8 +139,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "With Patchwork Crochet",
         "£80.60",
-        "Red",
-        "UK 20S",
+        ["Red","Blue","Gold"],
+        ["UK 20S","UK 22S"],
         "Casual style",
         "Dresses",
         "River Island",
@@ -153,8 +151,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "Levi’s Jeans for women",
         "",
-        "Blue",
-        "UK 18L",
+        ["Blue"],
+        ["UK 18L"],
         "Sport",
         "Jeans",
         "Adidas",
@@ -165,8 +163,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "Boyfriend T-Shirt with Bohemian Print",
         "£90.00",
-        "Green",
-        "UK 20",
+        ["Black","Green"],
+        ["UK 20"],
         "New Look",
         "Jersey Tops",
         "Antipodium",
@@ -177,8 +175,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "Colour Block",
         "£550.50",
-        "Black",
-        "UK 20L",
+        ["Black"],
+        ["UK 20L","UK 22S"],
         "Casual style",
         "Coats & Jackets",
         "Chi Chi London",
@@ -189,8 +187,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "Monki Festval Knitted",
         "£24.75",
-        "Blue",
-        "UK 22S",
+        ["Blue"],
+        ["UK 18","UK 22S","UK 20L"],
         "Vintage",
         "Coats & Jackets",
         "River Island",
@@ -201,8 +199,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "Oversized Cardigan",
         "£90.00",
-        "Gold",
-        "UK 18",
+        ["Gold","Blue"],
+        ["UK 18"],
         "New Look",
         "Dresses",
         "New Balance",
@@ -213,8 +211,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "Paul & Joe Sister Jumper with Neon Trims",
         "£19.75",
-        "Blue",
-        "UK 18L",
+        ["Blue"],
+        ["UK 18L"],
         "New Look",
         "Jersey Tops",
         "Antipodium",
@@ -225,8 +223,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "Only Busted Knee Jean",
         "£140.50",
-        "Black",
-        "UK 22S",
+        ["Black"],
+        ["UK 22S"],
         "Sport",
         "Coats & Jackets",
         "Adidas",
@@ -237,8 +235,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "Boyfriend T-Shirt with Bohemian Print",
         "£85.75",
-        "Black",
-        "UK 2",
+        ["Black"],
+        ["UK 2"],
         "Nail the 90s",
         "Dresses",
         "Chi Chi London",
@@ -249,8 +247,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "Boyfriend T-Shirt with Bohemian Print",
         "£34.25",
-        "Black",
-        "UK 22L",
+        ["Black"],
+        ["UK 22L"],
         "Sport",
         "Coats & Jackets",
         "New Balance",

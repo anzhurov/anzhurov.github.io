@@ -335,7 +335,7 @@
         right: 0;
         width: 40px;
         height: 100%;
-        box-shadow: -20px 0 10px -5px rgba(255,255,255,1);;
+        box-shadow: -20px 0 10px -5px rgba(255,255,255,1);
         background-color: white;
     }
 
@@ -353,6 +353,10 @@
     .category__list {
         width: calc(100%/2);
         margin: 0;
+        padding-left: 0;
+    }
+
+    .category__item__list {
         padding-left: 0;
     }
 

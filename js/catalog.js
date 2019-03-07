@@ -4,6 +4,7 @@ var filterValuesTablet = document.querySelectorAll(".category__item");
 var category = document.getElementById("category--tablet");
 var catalogContainerTop = document.getElementById("catalog__items__wrapper--top");
 var catalogContainerBottom = document.getElementById("catalog__items__wrapper--bottom");
+var glassIcon = document.querySelector(".tablet__glass");
 var selectedFilterValues = {};
 
 filterContent.onclick = function () {
@@ -11,6 +12,15 @@ filterContent.onclick = function () {
         category.classList.replace("tablet__hidden", "tablet__view");
     } else {
         category.classList.replace("tablet__view", "tablet__hidden");
+    }
+};
+
+glassIcon.onclick = function () {
+    let search__input = glassIcon.previousElementSibling;
+    if (search__input.style.display === "none") {
+        search__input.style.display = "block";
+    } else {
+        search__input.style.display = "none";
     }
 };
 
@@ -162,8 +172,13 @@ var productsBottom = productObjects.slice(4, 14);
 initCatalogContainer(productsTop, catalogContainerTop);
 initCatalogContainer(productsBottom, catalogContainerBottom);
 
-filterValuesDesktop.forEach(onClickFilterFunction);
-filterValuesTablet.forEach(onClickFilterFunction);
+for(let i = 0; i < filterValuesDesktop.length; i++) {
+    filterValuesDesktop[i] = onClickFilterFunction;
+}
+
+for(let i = 0; i < filterValuesTablet.length; i++) {
+    filterValuesTablet[i] = onClickFilterFunction;
+}
 
 var productItems = document.querySelectorAll(".catalog__item");
 for (let i = 0; i < productItems.length; i++) {
@@ -172,3 +187,5 @@ for (let i = 0; i < productItems.length; i++) {
         location.href = "item.html" + "?id=" + productID.innerHTML;
     };
 }
+
+
