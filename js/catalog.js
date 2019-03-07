@@ -184,8 +184,8 @@ function initFilterValuesListeners(values) {
 function initProductItemsListeners() {
     for (let i = 0; i < productItems.length; i++) {
         productItems[i].onclick = function () {
-            let productID = this.firstChild;
-            location.href = "item.html" + "?id=" + productID.innerHTML;
+            let productIdElement = this.firstChild;
+            location.href = "item.html" + "?id=" + productIdElement.innerHTML;
         };
     }
 }

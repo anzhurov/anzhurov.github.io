@@ -32,7 +32,7 @@ function displayMessageIfBagIsEmpty() {
 
 function createProductElement(productItem) {
     let productElement = document.createElement("div");
-    let productID = document.createElement("span")
+    let productId = document.createElement("span")
     let productImageWrapper = document.createElement("div");
     let productImage = document.createElement("img");
     let productViewBlock = document.createElement("div");
@@ -47,7 +47,7 @@ function createProductElement(productItem) {
     let productButton = document.createElement("button");
 
     productElement.classList.add("shopping__bag__item");
-    productID.classList.add("shopping__item__id");
+    productId.classList.add("shopping__item__id");
     productImageWrapper.classList.add("shopping__item__image__wrapper");
     productImage.classList.add("shopping__bag__image");
     productViewBlock.classList.add("shopping__item__view__item");
@@ -64,7 +64,7 @@ function createProductElement(productItem) {
     productImage.setAttribute("alt", "Photo of item");
     productImage.setAttribute("src", productItem.image);
 
-    productID.style.display = "none";
+    productId.style.display = "none";
 
     productTitle.innerHTML = productItem.title;
     productPrice.innerHTML = productItem.price;
@@ -73,7 +73,7 @@ function createProductElement(productItem) {
     productQuantity.innerHTML = "Quantity: " + getCountOfProduct(JSON.stringify(productItem));
     productButton.innerHTML = "Remove item";
     productViewText.innerHTML = "View more";
-    productID.innerHTML = productItem.id;
+    productId.innerHTML = productItem.id;
 
     productImageWrapper.appendChild(productImage);
     productImageWrapper.appendChild(productViewBlock);
@@ -88,7 +88,7 @@ function createProductElement(productItem) {
     productInfoBlock.appendChild(productFiltersBlock);
     productInfoBlock.appendChild(productButton);
 
-    productElement.appendChild(productID);
+    productElement.appendChild(productId);
     productElement.appendChild(productImageWrapper);
     productElement.appendChild(productInfoBlock);
 
@@ -110,60 +110,76 @@ function initTotalCostElement() {
     totalCost.innerHTML = "£" + price;
 }
 
-for (let i = 0; i < productItems.length; i++) {
-    productItems[i].onclick = function () {
-        let productID = productItems[i].parentNode.firstElementChild;
-        location.href = "item.html" + "?id=" + productID.innerHTML;
-    };
+function addRemoveItemButtonsListeners() {
+    for (let i = 0; i < removeItemButtons.length; i++) {
+        removeItemButtons[i].onclick = function (event) {
+            let target = event.target;
+            let productContainer = target.parentNode.parentNode;
+            let productId = target.parentNode.parentNode.childNodes[0].innerHTML;
+            let productInfoColor = target.previousSibling.childNodes[0].innerHTML;
+            let productInfoSize = target.previousSibling.childNodes[1].innerHTML;
+            let productInfoQuantity = target.previousSibling.childNodes[2];
+
+            let productColor = productInfoColor.slice(productInfoColor.indexOf(" ") + 1);
+            let productSize = productInfoSize.slice(productInfoSize.indexOf(" ") + 1);
+
+            let targetObject = productObjects.filter(item => item.id == productId && item.size == productSize &&
+                item.color == productColor);
+            let quantityInStorage = storage.getItem(JSON.stringify(targetObject[0]));
+
+            if (checkIfProductIsInStore()) {
+                storage.setItem(JSON.stringify(targetObject[0]), --quantityInStorage);
+                productInfoQuantity.innerHTML = "Quantity: " + getCountOfProduct(JSON.stringify(targetObject[0]));
+            } else {
+                storage.removeItem(JSON.stringify(targetObject[0]));
+                productContainer.remove();
+            }
+            if (!getProductsFromStorage()) {
+                displayMessageIfBagIsEmpty();
+            }
+
+            initTotalCostElement();
+            reInitBagElement();
+
+            function checkIfProductIsInStore() {
+                return parseInt(quantityInStorage) > 1;
+            }
+        };
+    }
 }
 
-for (let i = 0; i < removeItemButtons.length; i++) {
-    removeItemButtons[i].onclick = function (event) {
-        let target = event.target;
-        let productContainer = target.parentNode.parentNode;
-        let productID = target.parentNode.parentNode.childNodes[0].innerHTML;
-        let productInfoColor = target.previousSibling.childNodes[0].innerHTML;
-        let productInfoSize = target.previousSibling.childNodes[1].innerHTML;
-        let productInfoQuantity = target.previousSibling.childNodes[2];
-
-        let productColor = productInfoColor.slice(productInfoColor.indexOf(" ") + 1);
-        let productSize = productInfoSize.slice(productInfoSize.indexOf(" ") + 1);
-
-        let targetObject = productObjects.filter(item => item.id == productID && item.size == productSize &&
-            item.color == productColor);
-        let quantityInStorage = storage.getItem(JSON.stringify(targetObject[0]));
-
-        if (checkIfProductIsInStore()) {
-            storage.setItem(JSON.stringify(targetObject[0]), --quantityInStorage);
-            productInfoQuantity.innerHTML = "Quantity: " + getCountOfProduct(JSON.stringify(targetObject[0]));
-        } else {
-            storage.removeItem(JSON.stringify(targetObject[0]));
-            productContainer.remove();
-        }
-        if (!getProductsFromStorage()) {
-            displayMessageIfBagIsEmpty();
-        }
-
-        initTotalCostElement();
+function addClearButtonListener() {
+    clearBagButton.onclick = function () {
+        storage.clear();
+        shoppingBag.innerHTML = "";
         reInitBagElement();
-
-        function checkIfProductIsInStore() {
-            return parseInt(quantityInStorage) > 1;
-        }
+        displayMessageIfBagIsEmpty();
     };
 }
 
-clearBagButton.onclick = function () {
-    storage.clear();
-    shoppingBag.innerHTML = "";
-    reInitBagElement();
-    displayMessageIfBagIsEmpty();
-};
+function addProductItemsListeners() {
+    for (let i = 0; i < productItems.length; i++) {
+        productItems[i].onclick = function () {
+            let productId = productItems[i].parentNode.firstElementChild;
+            location.href = "item.html" + "?id=" + productId.innerHTML;
+        };
+    }
+}
 
-buyButton.onclick = function () {
-    storage.clear();
-    shoppingBag.innerHTML = "";
-    bagEmptyMessageText.firstElementChild.innerHTML = "Thank you for your purchase!";
-    reInitBagElement();
-    displayMessageIfBagIsEmpty();
-};
+function addBuyButtonListener() {
+    buyButton.onclick = function () {
+        storage.clear();
+        shoppingBag.innerHTML = "";
+        bagEmptyMessageText.firstElementChild.innerHTML = "Thank you for your purchase!";
+        reInitBagElement();
+        displayMessageIfBagIsEmpty();
+    };
+}
+
+addProductItemsListeners();
+addRemoveItemButtonsListeners();
+addClearButtonListener();
+addBuyButtonListener();
+
+
+
