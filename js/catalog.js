@@ -233,8 +233,8 @@ var onClickFilterFunction = function (item) {
 var productObjects = initProductArray();
 var topProducts = productObjects.slice(0, 4);
 var bottomProducts = productObjects.slice(4, 14);
-initCatalogContainer(topProducts, catalogTopLineBlock);
-initCatalogContainer(bottomProducts, catalogBottomLineBlock);
+addObjectsToContainer(topProducts, catalogTopLineBlock);
+addObjectsToContainer(bottomProducts, catalogBottomLineBlock);
 initFilterValuesListeners(filterValuesTablet);
 initFilterValuesListeners(filterValuesDesktop);
 

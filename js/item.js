@@ -137,7 +137,7 @@ addToBagButton.onclick = function () {
     currentObject.color = selectedColor;
     let product = JSON.stringify(currentObject);
     store(product);
-    updateShoppingBagContent();
+    updateBagElementValues();
 
     function store(product) {
         let value = storage.getItem(product);

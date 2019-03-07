@@ -106,7 +106,7 @@ function initProductContainer(productObjects, shoppingBag) {
 }
 
 function initTotalCostElement() {
-    let price = getTotalCostOfProductsFromStore();
+    let price = getTotalCostOfProductsFromBag();
     totalCost.innerHTML = "£" + price;
 }
 
@@ -145,7 +145,7 @@ for (let i = 0; i < removeItemButtons.length; i++) {
         }
 
         initTotalCostElement();
-        setShoppingBagContent();
+        reInitBagElement();
 
         function checkIfProductIsInStore() {
             return parseInt(quantityInStorage) > 1;
@@ -156,7 +156,7 @@ for (let i = 0; i < removeItemButtons.length; i++) {
 clearBagButton.onclick = function () {
     storage.clear();
     shoppingBag.innerHTML = "";
-    setShoppingBagContent();
+    reInitBagElement();
     displayMessageIfBagIsEmpty();
 };
 
@@ -164,6 +164,6 @@ buyButton.onclick = function () {
     storage.clear();
     shoppingBag.innerHTML = "";
     bagEmptyMessageText.firstElementChild.innerHTML = "Thank you for your purchase!";
-    setShoppingBagContent();
+    reInitBagElement();
     displayMessageIfBagIsEmpty();
 };

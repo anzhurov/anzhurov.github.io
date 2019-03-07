@@ -10,7 +10,7 @@ var timerId = initSliderTimer();
 
 var productObjects = initProductArray();
 var arrivalObjects = [productObjects[2], productObjects[14], productObjects[10], productObjects[1]];
-initCatalogContainer(arrivalObjects, arrivalsContent);
+addObjectsToContainer(arrivalObjects, arrivalsContent);
 var arrivalsElements = document.querySelectorAll(".arrivals__item");
 
 

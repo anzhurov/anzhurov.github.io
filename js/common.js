@@ -1,46 +1,38 @@
 var storage = localStorage;
 
-var menuButton = document.querySelector(".mobile-menu");
-var menu = document.getElementById("menu__mobile");
-var totalPriceInShoppingBag = document.getElementById("shopping-bag__total-price");
-var countOfProductsInShoppingBag = document.getElementById("shopping-bag__total-count");
-setShoppingBagContent();
+var mobileMenuButton = document.querySelector(".mobile-menu");
+var mobileMenuElement = document.getElementById("menu__mobile");
+var bagTotalPriceElement = document.getElementById("shopping-bag__total-price");
+var bagTotalCount = document.getElementById("shopping-bag__total-count");
 
-function setShoppingBagContent() {
+function reInitBagElement() {
     if (storage.length !== null) {
-        updateShoppingBagContent();
+        updateBagElementValues();
     } else {
-        totalPriceInShoppingBag.innerHTML = "";
-        countOfProductsInShoppingBag.innerHTML = "(0)";
+        bagTotalPriceElement.innerHTML = "";
+        bagTotalCount.innerHTML = "(0)";
     }
 }
 
-function updateShoppingBagContent() {
+function updateBagElementValues() {
+    let price = getTotalCostOfProductsFromBag();
+    let count = getCountOfProductsFromBag();
 
-    let price = getTotalCostOfProductsFromStore();
-    let count = getCountOfProductsFromStore();
+    bagTotalPriceElement.innerHTML = "£" + price;
+    bagTotalCount.innerHTML = "(" + count + ")";
 
-    changeContent();
-
-    function changeContent() {
-        totalPriceInShoppingBag.innerHTML = "£" + price;
-        countOfProductsInShoppingBag.innerHTML = "(" + count + ")";
+    function getCountOfProductsFromBag() {
+        let count = 0;
+        for (let i = 0; i < storage.length; i++) {
+            let key = storage.key(i);
+            count += getCountOfProduct(key);
+        }
+        return count;
     }
 }
 
-function getCountOfProductsFromStore() {
-    let count = 0;
-
-    for (let i = 0; i < storage.length; i++) {
-        let key = storage.key(i);
-        count += getCountOfProduct(key);
-    }
-    return count;
-}
-
-function getTotalCostOfProductsFromStore() {
+function getTotalCostOfProductsFromBag() {
     let price = 0;
-
     for (let i = 0; i < storage.length; i++) {
         let key = storage.key(i);
         let value = storage.getItem(key);
@@ -55,19 +47,13 @@ function getCountOfProduct(product) {
 }
 
 
-function initCatalogContainer(productObjects, catalogContainer) {
-
+function addObjectsToContainer(productObjects, container) {
     for (let i = 0; i < productObjects.length; i++) {
         let productElement = createProductElement(productObjects[i]);
-        catalogContainer.appendChild(productElement);
+        container.appendChild(productElement);
     }
-
-    return catalogContainer;
+    return container;
 }
-
-menuButton.onclick = function () {
-    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-};
 
 function Product(id, title, price, color, size, fashion, productType, brand, image, additionalInfo, additionalClasses) {
     this.id = id;
@@ -269,6 +255,11 @@ function initProductArray() {
 
     return products;
 }
+
+reInitBagElement();
+mobileMenuButton.onclick = function () {
+    mobileMenuElement.style.display = (mobileMenuElement.style.display === 'block') ? 'none' : 'block';
+};
 
 
 
