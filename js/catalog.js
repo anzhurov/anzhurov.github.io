@@ -158,9 +158,16 @@ function showElements(productItems, filteredProducts) {
 function filterProductElements(productObjects, selectedFilterValues) {
     return _.filter(productObjects, function (productObject) {
         for (let selectedFilterValue in selectedFilterValues) {
-            if (productObject[selectedFilterValue.toLowerCase()] !== selectedFilterValues[selectedFilterValue]) {
-                return false;
+            if (typeof (productObject[selectedFilterValue.toLowerCase()]) !== "object") {
+                if (productObject[selectedFilterValue.toLowerCase()] !== selectedFilterValues[selectedFilterValue]) {
+                    return false;
+                }
+            } else {
+                if (productObject[selectedFilterValue.toLowerCase()].indexOf(selectedFilterValues[selectedFilterValue]) === -1) {
+                    return false;
+                }
             }
+
         }
         return true;
     });
@@ -172,12 +179,12 @@ var productsBottom = productObjects.slice(4, 14);
 initCatalogContainer(productsTop, catalogContainerTop);
 initCatalogContainer(productsBottom, catalogContainerBottom);
 
-for(let i = 0; i < filterValuesDesktop.length; i++) {
-    filterValuesDesktop[i] = onClickFilterFunction;
+for (let i = 0; i < filterValuesDesktop.length; i++) {
+    filterValuesDesktop[i] = onClickFilterFunction(filterValuesDesktop[i]);
 }
 
-for(let i = 0; i < filterValuesTablet.length; i++) {
-    filterValuesTablet[i] = onClickFilterFunction;
+for (let i = 0; i < filterValuesTablet.length; i++) {
+    filterValuesTablet[i] = onClickFilterFunction(filterValuesTablet[i]);
 }
 
 var productItems = document.querySelectorAll(".catalog__item");
