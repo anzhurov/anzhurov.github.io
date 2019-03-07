@@ -122,8 +122,15 @@ for (let i = 0; i < removeItemButtons.length; i++) {
         let target = event.target;
         let productContainer = target.parentNode.parentNode;
         let productID = target.parentNode.parentNode.childNodes[0].innerHTML;
+        let productInfoColor = target.previousSibling.childNodes[0].innerHTML;
+        let productInfoSize = target.previousSibling.childNodes[1].innerHTML;
         let productInfoQuantity = target.previousSibling.childNodes[2];
-        let targetObject = productObjects.filter(item => item.id == productID);
+
+        let productColor = productInfoColor.slice(productInfoColor.indexOf(" ") + 1);
+        let productSize = productInfoSize.slice(productInfoSize.indexOf(" ") + 1);
+
+        let targetObject = productObjects.filter(item => item.id == productID && item.size == productSize &&
+            item.color == productColor);
         let quantityInStorage = storage.getItem(JSON.stringify(targetObject[0]));
 
         if (checkIfProductIsInStore()) {
