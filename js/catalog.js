@@ -6,6 +6,14 @@ var catalogContainerTop = document.getElementById("catalog__items__wrapper--top"
 var catalogContainerBottom = document.getElementById("catalog__items__wrapper--bottom");
 var glassIcon = document.querySelector(".tablet__glass");
 var selectedFilterValues = {};
+var map = {
+    "Fashion": "fashion",
+    "Product type": "productType",
+    "Color": "color",
+    "Brand": "brand",
+    "Size": "size",
+    "Price rang": "price"
+};
 
 filterContent.onclick = function () {
     if (category.classList.contains("tablet__hidden")) {
@@ -104,16 +112,6 @@ function createProductElement(productItem) {
     }
 }
 
-function initCatalogContainer(productObjects, catalogContainer) {
-
-    for (let i = 0; i < productObjects.length; i++) {
-        let productElement = createProductElement(productObjects[i]);
-        catalogContainer.appendChild(productElement);
-    }
-
-    return catalogContainer;
-}
-
 var onClickFilterFunction = function (item) {
     item.onclick = function (event) {
         let products = document.querySelectorAll(".catalog__item");
@@ -158,19 +156,46 @@ function showElements(productItems, filteredProducts) {
 function filterProductElements(productObjects, selectedFilterValues) {
     return _.filter(productObjects, function (productObject) {
         for (let selectedFilterValue in selectedFilterValues) {
-            if (typeof (productObject[selectedFilterValue.toLowerCase()]) !== "object") {
-                if (productObject[selectedFilterValue.toLowerCase()] !== selectedFilterValues[selectedFilterValue]) {
+            let objectField = transformToObjectField(selectedFilterValue);
+            if (typeof productObject[objectField] !== "object") {
+                if (objectField === "price") {
+                    return isPriceInRange(productObject, selectedFilterValues[selectedFilterValue]);
+                } else if (productObject[objectField] !== selectedFilterValues[selectedFilterValue]) {
                     return false;
                 }
             } else {
-                if (productObject[selectedFilterValue.toLowerCase()].indexOf(selectedFilterValues[selectedFilterValue]) === -1) {
+                if (productObject[objectField].indexOf(selectedFilterValues[selectedFilterValue]) === -1) {
                     return false;
                 }
             }
-
         }
         return true;
     });
+
+    function isPriceInRange(productObject, range) {
+        let productPrice = parseFloat(productObject.price.replace("£", ""));
+        while (range.indexOf("£") !== -1) {
+            range = range.replace("£", "");
+        }
+
+        if (range.indexOf("-") !== -1) {
+            let boundsArray = range.split("-");
+            return productPrice >= parseFloat(boundsArray[0]) && productPrice <= parseFloat(boundsArray[1])
+        } else {
+            if (range.indexOf("To") !== -1) {
+                return productPrice <= parseFloat(range.replace("To ", ""));
+            }
+            if (range.indexOf("From") !== -1) {
+                return productPrice >= parseFloat(range.replace("From ", ""));
+            }
+        }
+
+        console.log(range);
+    }
+
+    function transformToObjectField(selectedFilterValue) {
+        return map[selectedFilterValue];
+    }
 }
 
 var productObjects = initProductArray();
@@ -190,7 +215,7 @@ for (let i = 0; i < filterValuesTablet.length; i++) {
 var productItems = document.querySelectorAll(".catalog__item");
 for (let i = 0; i < productItems.length; i++) {
     productItems[i].onclick = function () {
-        let productID = productItems[i].firstChild;
+        let productID = this.firstChild;
         location.href = "item.html" + "?id=" + productID.innerHTML;
     };
 }

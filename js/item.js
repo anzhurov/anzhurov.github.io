@@ -17,9 +17,9 @@ function initItem(receivedObject) {
     let productColors = receivedObject.color;
 
     itemTitle.innerHTML = receivedObject.title;
-    itemPrice.forEach(function (item) {
-        item.innerHTML = receivedObject.price;
-    });
+    for (let i = 0; i < itemPrice.length; i++) {
+        itemPrice[i].innerHTML = receivedObject.price;
+    }
 
     productSizes.forEach(function (item) {
         createSizeElement(itemFilterSizeBlock, item);
@@ -94,16 +94,32 @@ function removeClassIfExistsFromArray(arrayElements, className) {
     }
 }
 
+function showCannotFindItemMessage() {
+    let container = document.querySelector(".item__wrapper");
+    container.innerHTML = "";
+    container.appendChild(createMessage());
+
+    function createMessage() {
+        let messageBlock = document.createElement("div");
+        messageBlock.className = "no__item__message";
+        messageBlock.innerText = "Ooops... Couldn't find the item";
+        return messageBlock;
+    }
+}
+
 
 var productObjects = initProductArray();
 var query = queryString.substring(1);
 var receivedObject = getElementByID(query, productObjects);
 
-initItem(receivedObject);
-
-setBorderHighlightEventsOnButtons(sizeButtons);
-setBorderHighlightEventsOnButtons(colorButtons);
-replacePhotos();
+if (receivedObject) {
+    initItem(receivedObject);
+    setBorderHighlightEventsOnButtons(sizeButtons);
+    setBorderHighlightEventsOnButtons(colorButtons);
+    replacePhotos();
+} else {
+    showCannotFindItemMessage();
+}
 
 addToBagButton.onclick = function () {
     let selectedFilters = document.querySelectorAll(".checked__item");

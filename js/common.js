@@ -54,6 +54,17 @@ function getCountOfProduct(product) {
     return parseInt(storage.getItem(product));
 }
 
+
+function initCatalogContainer(productObjects, catalogContainer) {
+
+    for (let i = 0; i < productObjects.length; i++) {
+        let productElement = createProductElement(productObjects[i]);
+        catalogContainer.appendChild(productElement);
+    }
+
+    return catalogContainer;
+}
+
 menuButton.onclick = function () {
     menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
 };
@@ -91,7 +102,7 @@ function initProductArray() {
     products.push(new Product(++id,
         "Neck Knitted Jumper",
         "£76.25",
-        ["Green","Black", "Gold"],
+        ["Green", "Black", "Gold"],
         ["UK 18"],
         "Nail the 90s",
         "Coats & Jackets",
@@ -104,7 +115,7 @@ function initProductArray() {
         "Turtle Neck Jumper in Rib",
         "£130.25",
         ["Green"],
-        ["UK 18","UK 22S"],
+        ["UK 18", "UK 22S"],
         "Classical style",
         "Coats & Jackets",
         "Antipodium",
@@ -115,8 +126,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "With Patchwork Crochet",
         "£80.60",
-        ["Red","Blue","Gold"],
-        ["UK 18","UK 22S","UK 20S"],
+        ["Red", "Blue", "Gold"],
+        ["UK 18", "UK 22S", "UK 20S"],
         "Casual style",
         "Dresses",
         "River Island",
@@ -128,7 +139,7 @@ function initProductArray() {
         "Turtle Neck Jumper in Rib",
         "£130.25",
         ["Green"],
-        ["UK 18","UK 22S"],
+        ["UK 18", "UK 22S"],
         "Classical style",
         "Coats & Jackets",
         "Antipodium",
@@ -139,8 +150,8 @@ function initProductArray() {
     products.push(new Product(++id,
         "With Patchwork Crochet",
         "£80.60",
-        ["Red","Blue","Gold"],
-        ["UK 18","UK 22S","UK 20S"],
+        ["Red", "Blue", "Gold"],
+        ["UK 18", "UK 22S", "UK 20S"],
         "Casual style",
         "Dresses",
         "River Island",
@@ -163,7 +174,7 @@ function initProductArray() {
     products.push(new Product(++id,
         "Boyfriend T-Shirt with Bohemian Print",
         "£90.00",
-        ["Black","Green"],
+        ["Black", "Green"],
         ["UK 20"],
         "New Look",
         "Jersey Tops",
@@ -176,7 +187,7 @@ function initProductArray() {
         "Colour Block",
         "£550.50",
         ["Black"],
-        ["UK 20L","UK 22S"],
+        ["UK 20L", "UK 22S"],
         "Casual style",
         "Coats & Jackets",
         "Chi Chi London",
@@ -188,7 +199,7 @@ function initProductArray() {
         "Monki Festval Knitted",
         "£24.75",
         ["Blue"],
-        ["UK 18","UK 22S","UK 20L"],
+        ["UK 18", "UK 22S", "UK 20L"],
         "Vintage",
         "Coats & Jackets",
         "River Island",
@@ -199,7 +210,7 @@ function initProductArray() {
     products.push(new Product(++id,
         "Oversized Cardigan",
         "£90.00",
-        ["Gold","Blue"],
+        ["Gold", "Blue"],
         ["UK 18"],
         "New Look",
         "Dresses",

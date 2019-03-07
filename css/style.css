@@ -331,6 +331,7 @@ header {
 
 .banners__wrapper {
     display: flex;
+    justify-content: space-around;
 }
 
 .banner__item {
@@ -704,6 +705,10 @@ header {
 
     .banner__headline {
         content: "Sale";
+    }
+
+    .arrivals__item {
+        width: calc(100%/3);
     }
 
     .arrivals__item:nth-child(3) {

@@ -1,8 +1,8 @@
-var shoppingBagContainer = document.getElementById("shopping__bag__wrapper");
+var shoppingBag = document.getElementById("shopping__bag__wrapper");
 var totalCost = document.getElementById("shopping__state__total__price");
 var bagEmptyMessageText = document.getElementById("empty__message__wrapper");
 var productObjects = getProductsFromStorage();
-initProductContainer(productObjects, shoppingBagContainer);
+initProductContainer(productObjects, shoppingBag);
 initTotalCostElement();
 var productItems = document.querySelectorAll(".shopping__item__image__wrapper");
 var buyButton = document.getElementById("shopping__btn");
@@ -155,14 +155,14 @@ for (let i = 0; i < removeItemButtons.length; i++) {
 
 clearBagButton.onclick = function () {
     storage.clear();
-    shoppingBagContainer.innerHTML = "";
+    shoppingBag.innerHTML = "";
     setShoppingBagContent();
     displayMessageIfBagIsEmpty();
 };
 
 buyButton.onclick = function () {
     storage.clear();
-    shoppingBagContainer.innerHTML = "";
+    shoppingBag.innerHTML = "";
     bagEmptyMessageText.firstElementChild.innerHTML = "Thank you for your purchase!";
     setShoppingBagContent();
     displayMessageIfBagIsEmpty();
