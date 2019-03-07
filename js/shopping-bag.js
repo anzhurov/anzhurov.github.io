@@ -1,6 +1,8 @@
 var shoppingBag = document.getElementById("shopping__bag__wrapper");
+var totalCost = document.getElementById("shopping__state__total__price");
 var productObjects = getProductsFromStorage();
 initProductContainer(productObjects, shoppingBag);
+initTotalCostElement();
 var productItems = document.querySelectorAll(".shopping__bag__item");
 
 function getProductsFromStorage() {
@@ -12,6 +14,16 @@ function getProductsFromStorage() {
     }
 
     return products;
+}
+
+function ifEmpty() {
+    let emptyMessageText = document.getElementById("empty__message__wrapper");
+    let shoppingInfo = document.getElementById("shopping__state");
+    let productObjects = getProductsFromStorage();
+    if (productObjects != null) {
+        emptyMessageText.style.display = "none";
+        shoppingInfo.style.display = "flex";
+    }
 }
 
 function createProductElement(productItem) {
@@ -87,6 +99,11 @@ function initProductContainer(productObjects, shoppingBag) {
     }
 
     return shoppingBag;
+}
+
+function initTotalCostElement() {
+    let price = getTotalCostOfProductsFromStore();
+    totalCost.innerHTML = "£" + price;
 }
 
 for (let i = 0; i < productItems.length; i++) {

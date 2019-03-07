@@ -26,7 +26,8 @@
                 <div class="sign_up__wrapper clearfix">
                     <a href="#" class="header__sign-up left">E-mail sing up</a>
                     <div id="shopping-bag" class="left clearfix">
-                        <a href="shopping-bag.html"><img src="img/icons/ico_bag.png" alt="Bag icon" id="shopping-bag__icon" class="left">
+                        <a href="shopping-bag.html"><img src="img/icons/ico_bag.png" alt="Bag icon"
+                                                         id="shopping-bag__icon" class="left">
                             <span id="shopping-bag__title" class="left">Bag <span id="shopping-bag__total-price"></span>
                                 <span id="shopping-bag__total-count">(0)</span></span></a>
                     </div>
@@ -90,26 +91,12 @@
     </section>
     <section id="shopping__bag">
         <div class="content-wrapper">
-            <div id="shopping__bag__wrapper">
-                <!--<div class="shopping__bag__item">-->
-                    <!--<div class="shopping__item__image__wrapper">-->
-                        <!--<img src="./img/catalog/7.jpg" alt="Photo of item" class="shopping__bag__image">-->
-                        <!--<div class="shopping__item__view__item">-->
-                        <!--</div>-->
-                        <!--<h3 class="shopping__item__view__item__text">View item</h3>-->
-                    <!--</div>-->
-                    <!--<div class="shopping__bag__info">-->
-                        <!--<h6 class="shopping__item__title">Only Skinny Jeans</h6>-->
-                        <!--<h5 class="shopping__item__price">£390.25</h5>-->
-                        <!--<div class="shopping__item__filters">-->
-                            <!--<p class="shopping__item__color">Color: Philipa wash</p>-->
-                            <!--<p class="shopping__item__size">Size: UK 17</p>-->
-                            <!--<p class="shopping__item__quantity">Quantity: 1</p>-->
-                        <!--</div>-->
-                        <!--<button class="shopping__item__btn">Remove item</button>-->
-                    <!--</div>-->
-                <!--</div>-->
+            <div id="empty__message__wrapper">
+                <p class="empty__message__text">Your shopping bag is empty. Use <a href="catalog.html"
+                                                                                   class="empty__message__link">Catalog</a>
+                    to add new items</p>
             </div>
+            <div id="shopping__bag__wrapper"></div>
         </div>
     </section>
     <section id="shopping__info">
@@ -120,12 +107,12 @@
             </div>
         </div>
         <div class="content-wrapper">
-            <div class="shopping__state">
+            <div id="shopping__state">
                 <p class="shopping__state__empty">Empty bag</p>
                 <button class="shopping__btn">Buy now</button>
                 <div class="shopping__state__total">
                     <p class="shopping__state__total__title">Total cost</p>
-                    <h4 class="shopping__state__total__price">£1 640.50</h4>
+                    <h4 id="shopping__state__total__price">£1 640.50</h4>
                 </div>
             </div>
         </div>

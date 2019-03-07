@@ -20,6 +20,7 @@
 #shopping__bag {
     padding-bottom: 75px;
     border-bottom: 1px solid #e5e5e5;
+    text-align: center;
 }
 
 #shopping__bag__wrapper {
@@ -27,6 +28,18 @@
     width: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.empty__message__text {
+    margin-top: 70px;
+}
+
+.empty__message__link {
+    color: #f14a58;
+}
+
+.empty__message__link:hover {
+    text-decoration: underline;
 }
 
 .shopping__bag__item {
@@ -101,8 +114,8 @@
     font-size: .9rem;
 }
 
-.shopping__state {
-    display: flex;
+#shopping__state {
+    display: none;  //flex
     margin-bottom: 30px;
     justify-content: space-between;
     align-items: center;
@@ -131,7 +144,7 @@
     font: .8rem robotoregular, sans-serif;
 }
 
-.shopping__state__total__price {
+#shopping__state__total__price {
     margin: 5px 0 0 0;
     font-size: 1.3rem;
 }
@@ -168,7 +181,7 @@
         font-size: .7rem;
     }
 
-    .shopping__state__total__price {
+    #shopping__state__total__price {
         font-size: 1rem;
     }
 
@@ -225,7 +238,7 @@
         font-size: .7rem;
     }
 
-    .shopping__state__total__price {
+    #shopping__state__total__price {
         font-size: 1rem;
     }
 }

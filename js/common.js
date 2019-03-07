@@ -17,7 +17,7 @@ function setShoppingBagContent() {
 
 function updateShoppingBagContent() {
 
-    let price = getTotalPriceOfProductsFromStore();
+    let price = getTotalCostOfProductsFromStore();
     let count = getCountOfProductsFromStore();
 
     changeContent();
@@ -38,7 +38,7 @@ function getCountOfProductsFromStore() {
     return count;
 }
 
-function getTotalPriceOfProductsFromStore() {
+function getTotalCostOfProductsFromStore() {
     let price = 0;
 
     for (let i = 0; i < storage.length; i++) {

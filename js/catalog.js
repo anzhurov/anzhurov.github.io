@@ -1,10 +1,10 @@
-// import * as _ from "./libs/lodash";
-
 var filterContent = document.getElementById("filter");
-var filterItem = document.querySelectorAll(".filter__button__dropdown");
+var filterValuesDesktop = document.querySelectorAll(".filter__button__dropdown");
+var filterValuesTablet = document.querySelectorAll(".category__item");
 var category = document.getElementById("category--tablet");
 var catalogContainerTop = document.getElementById("catalog__items__wrapper--top");
 var catalogContainerBottom = document.getElementById("catalog__items__wrapper--bottom");
+var selectedFilterValues = {};
 
 filterContent.onclick = function () {
     if (category.classList.contains("tablet__hidden")) {
@@ -103,55 +103,66 @@ function initCatalogContainer(productObjects, catalogContainer) {
     return catalogContainer;
 }
 
+var onClickFilterFunction = function (item) {
+    item.onclick = function (event) {
+        let products = document.querySelectorAll(".catalog__item");
+        let target = event.target;
+        let selectedFilterValueElement = target.parentElement.parentElement.children[0].children[1];
+        let filterTitle = target.parentElement.parentElement.children[0].children[0].innerText;
+        let selectedFilterValue = target.innerText;
+        if (selectedFilterValue === "Not selected") {
+            delete selectedFilterValues[filterTitle];
+            selectedFilterValueElement.innerText = "";
+        } else {
+            selectedFilterValueElement.innerText = selectedFilterValue;
+            selectedFilterValues[filterTitle] = selectedFilterValue;
+        }
+
+        let filteredProducts = filterProductElements(productObjects, selectedFilterValues);
+        hideElements(products);
+        showElements(products, filteredProducts);
+    }
+};
+
+function hideElements(elements) {
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].style.display = "none";
+    }
+}
+
+function showElements(productItems, filteredProducts) {
+    for (let i = 0; i < productItems.length; i++) {
+        const child = productItems[i].firstChild;
+        for (let j = 0; j < filteredProducts.length; j++) {
+            if (filteredProducts[j].id.toString() === child.innerHTML) {
+                let itemClassList = productItems[i].classList;
+                if (!itemClassList.contains("tablet__view") && !itemClassList.contains("mobile__view")) {
+                    productItems[i].style.display = "block";
+                }
+            }
+        }
+    }
+}
+
+function filterProductElements(productObjects, selectedFilterValues) {
+    return _.filter(productObjects, function (productObject) {
+        for (let selectedFilterValue in selectedFilterValues) {
+            if (productObject[selectedFilterValue.toLowerCase()] !== selectedFilterValues[selectedFilterValue]) {
+                return false;
+            }
+        }
+        return true;
+    });
+}
+
 var productObjects = initProductArray();
 var productsTop = productObjects.slice(0, 4);
 var productsBottom = productObjects.slice(4, 14);
 initCatalogContainer(productsTop, catalogContainerTop);
 initCatalogContainer(productsBottom, catalogContainerBottom);
 
-filterItem.forEach(function (item) {
-    item.onclick = function (event) {
-        let target = event.target;
-        let productItems = document.querySelectorAll(".catalog__item");
-        let productID = productItems[0].firstChild;
-        let text = target.parentElement.parentElement.children[0].children[1];
-        text.innerText = "";
-        let categoryName = target.parentElement.parentElement.children[0].innerText;
-        let filterName = target.innerText;
-        if (filterName === "Not selected") {
-            clear();
-            initCatalogContainer(productsTop, catalogContainerTop);
-            initCatalogContainer(productsBottom, catalogContainerBottom);
-            return;
-        }
-        text.innerText = filterName;
-        let arr = filterProductElement(productObjects, categoryName, filterName);
-
-        hiddenElemets(productItems);
-        showElements(productItems, arr);
-    }
-});
-
-function hiddenElemets(elements) {
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].style.display = "none";
-    }
-}
-
-function showElements(productItems, arr) {
-    for (let i = 0; i < productItems.length; i++) {
-        const child = productItems[i].firstChild;
-        for (let j = 0; j < arr.length; j++) {
-            if (arr[j].id == child.innerHTML) {
-                productItems[i].style.display = "block";
-            }
-        }
-    }
-}
-
-function filterProductElement(productObjects, categoryName, filterName) {
-    return _.filter(productObjects, [categoryName.toLowerCase(), filterName]);
-}
+filterValuesDesktop.forEach(onClickFilterFunction);
+filterValuesTablet.forEach(onClickFilterFunction);
 
 var productItems = document.querySelectorAll(".catalog__item");
 for (let i = 0; i < productItems.length; i++) {
