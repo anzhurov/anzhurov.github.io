@@ -1,14 +1,14 @@
 var sizeButtons = document.getElementsByClassName("item__info__size__value");
 var colorButtons = document.getElementsByClassName("item__info__color__value");
 var addToBagButton = document.getElementById("item__btn");
-var queryString = decodeURIComponent(window.location.search);
+var URI = decodeURIComponent(window.location.search);
 
-function getElementByID(query, productObjects) {
-    let objectId = query.slice(query.indexOf("=") + 1);
+function getProductByIdFromURI(URI, productObjects) {
+    let objectId = URI.slice(URI.indexOf("=") + 1);
     return _.find(productObjects, ["id", parseInt(objectId)]);
 }
 
-function initItem(receivedObject) {
+function initProductItem(receivedObject) {
     let itemTitle = document.querySelector(".item__info__headline");
     let itemPrice = document.querySelectorAll(".item__info__price");
     let itemFilterSizeBlock = document.querySelector(".item__info__size");
@@ -46,11 +46,6 @@ function initItem(receivedObject) {
 
 
 function setBorderHighlightEventsOnButtons(buttons) {
-    function highlightButtonBorder(buttons, target) {
-        removeClassIfExistsFromArray(buttons, "checked__item");
-        addClass(target, "checked__item");
-    }
-
     for (let i = 0; i < buttons.length; i++) {
         buttons.item(i).onclick = function (event) {
             let target = event.target;
@@ -60,6 +55,11 @@ function setBorderHighlightEventsOnButtons(buttons) {
             }
             return target;
         }
+    }
+
+    function highlightButtonBorder(buttons, target) {
+        removeClassIfExistsFromArray(buttons, "checked__item");
+        target.classList.add("checked__item");
     }
 }
 
@@ -71,13 +71,9 @@ function replacePhotos() {
             removeClassIfExistsFromArray(thumbnailPhotos, "active__picture");
             let target = event.target;
             mainPhoto[1].src = target.src;
-            addClass(target, "active__picture");
+            target.classList.add("active__picture");
         }
     }
-}
-
-function addClass(element, className) {
-    element.classList.add(className);
 }
 
 function removeClassIfExists(element, className) {
@@ -109,11 +105,11 @@ function showCannotFindItemMessage() {
 
 
 var productObjects = initProductArray();
-var query = queryString.substring(1);
-var receivedObject = getElementByID(query, productObjects);
+var query = URI.substring(1);
+var receivedObject = getProductByIdFromURI(query, productObjects);
 
 if (receivedObject) {
-    initItem(receivedObject);
+    initProductItem(receivedObject);
     setBorderHighlightEventsOnButtons(sizeButtons);
     setBorderHighlightEventsOnButtons(colorButtons);
     replacePhotos();
