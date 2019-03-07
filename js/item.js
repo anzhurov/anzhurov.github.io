@@ -4,7 +4,7 @@ var addToBagButton = document.getElementById("item__btn");
 var queryString = decodeURIComponent(window.location.search);
 
 function getElementByID(query, productObjects) {
-    let objectId = query.slice(query.indexOf("=")+1);
+    let objectId = query.slice(query.indexOf("=") + 1);
     return _.find(productObjects, ["id", parseInt(objectId)]);
 }
 
@@ -21,11 +21,11 @@ function initItem(receivedObject) {
         item.innerHTML = receivedObject.price;
     });
 
-    productSizes.forEach(function(item){
+    productSizes.forEach(function (item) {
         createSizeElement(itemFilterSizeBlock, item);
     });
 
-    productColors.forEach(function(item){
+    productColors.forEach(function (item) {
         createColorElement(itemFilterColorBlock, item);
     });
 
@@ -95,7 +95,6 @@ function removeClassIfExistsFromArray(arrayElements, className) {
 }
 
 
-
 var productObjects = initProductArray();
 var query = queryString.substring(1);
 var receivedObject = getElementByID(query, productObjects);
@@ -108,6 +107,13 @@ replacePhotos();
 
 addToBagButton.onclick = function () {
     let selectedFilters = document.querySelectorAll(".checked__item");
+    let errorMessage = document.querySelector(".item__info__error");
+
+    if (selectedFilters.length <= 1) {
+        errorMessage.style.display = "block";
+        return;
+    }
+    errorMessage.style.display = "none";
     let selectedSize = selectedFilters[0].innerHTML;
     let selectedColor = selectedFilters[1].innerHTML;
     let currentObject = Object.assign({}, receivedObject);
