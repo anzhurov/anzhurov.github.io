@@ -198,14 +198,16 @@ filterPanel.onclick = function () {
     }
 };
 
-glassIcon.onclick = function () {
-    let search__input = glassIcon.previousElementSibling;
-    if (!search__input.style.display || search__input.style.display === "none") {
-        search__input.style.display = "block";
-    } else {
-        search__input.style.display = "none";
-    }
-};
+function addGlassIconListener() {
+    glassIcon.onclick = function () {
+        let search__input = glassIcon.previousElementSibling;
+        if (!search__input.style.display || search__input.style.display === "none") {
+            search__input.style.display = "block";
+        } else {
+            search__input.style.display = "none";
+        }
+    };
+}
 
 var onClickFilterFunction = function (item) {
     item.onclick = function (event) {
@@ -229,6 +231,8 @@ var onClickFilterFunction = function (item) {
         showElements(products, filteredProducts);
     }
 };
+
+addGlassIconListener();
 
 var productObjects = initProductArray();
 var topProducts = productObjects.slice(0, 4);

@@ -1,6 +1,6 @@
 var storage = localStorage;
 
-var mobileMenuButton = document.querySelector(".mobile-menu");
+var burgerMenuButton = document.querySelector(".mobile-menu");
 var mobileMenuElement = document.getElementById("menu__mobile");
 var bagTotalPriceElement = document.getElementById("shopping-bag__total-price");
 var bagTotalCount = document.getElementById("shopping-bag__total-count");
@@ -67,6 +67,12 @@ function Product(id, title, price, color, size, fashion, productType, brand, ima
     this.image = image;
     this.additionalInfo = additionalInfo;
     this.additionalClasses = additionalClasses;
+}
+
+function addMenuButtonListener() {
+    burgerMenuButton.onclick = function () {
+        mobileMenuElement.style.display = (mobileMenuElement.style.display === 'block') ? 'none' : 'block';
+    };
 }
 
 function initProductArray() {
@@ -257,9 +263,7 @@ function initProductArray() {
 }
 
 reInitBagElement();
-mobileMenuButton.onclick = function () {
-    mobileMenuElement.style.display = (mobileMenuElement.style.display === 'block') ? 'none' : 'block';
-};
+addMenuButtonListener();
 
 
 
