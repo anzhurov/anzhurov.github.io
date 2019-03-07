@@ -12,7 +12,11 @@
 }
 
 #filter__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     margin: 0;
     padding-left: 0;
@@ -22,10 +26,11 @@
 .filter__button {
     position: relative;
     display: inline-block;
-    width: calc(100%/6);
+    width: calc(100% / 6);
     padding: 10px;
     list-style: none;
     cursor: pointer;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -37,13 +42,16 @@
 .filter__button:hover {
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;
-    box-shadow: 0 6px 10px 0px rgba(0,0,0,0.25);;
+    -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.25);;
     z-index: 2;
 }
 
 .filter__button__text {
     position: absolute;
     top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
@@ -61,8 +69,10 @@
 .filter__button__icon {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     right: 8%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .filter__icon {
@@ -78,11 +88,15 @@
     padding-left: 0;
     width: calc(100% + 2px);
     list-style: none;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     border: 1px solid #e5e5e5;
     background-color: white;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    box-shadow: 0 6px 10px 0px rgba(0,0,0,0.25);;
+    -webkit-box-shadow: 0 6px 10px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 10px 0px rgba(0, 0, 0, 0.25);;
     z-index: 2;
 }
 
@@ -171,7 +185,7 @@
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .catalog__item {
-        width: calc(100%/3);
+        width: calc(100% / 3);
     }
 
     .category__item__list {
@@ -209,8 +223,14 @@
 
     .filter--tablet {
         position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: start;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         height: 100%;
         overflow: hidden;
@@ -246,14 +266,17 @@
     }
 
     .category--tablet {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         padding: 40px;
         background-color: white;
     }
 
     .category__list {
-        width: calc(100%/3);
+        width: calc(100% / 3);
         margin: 0;
         padding-left: 0;
     }
@@ -270,11 +293,11 @@
     }
 
     /*main {*/
-        /*filter: brightness(.7);*/
+    /*filter: brightness(.7);*/
     /*}*/
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 375px) and (max-width: 767px) {
 
     #filter {
         position: relative;
@@ -286,8 +309,14 @@
 
     .filter--tablet {
         position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: start;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         height: 100%;
         overflow: hidden;
@@ -328,30 +357,39 @@
 
     .filter__arrow {
         position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         top: 0;
         right: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
         width: 40px;
         height: 100%;
-        box-shadow: -20px 0 10px -5px rgba(255,255,255,1);
         background-color: white;
+        -webkit-box-shadow: -20px 0 10px -5px rgba(255, 255, 255, 1);
+        box-shadow: -20px 0 10px -5px rgba(255, 255, 255, 1);
     }
 
     #category--tablet {
-        /*display: none; //display: flex;*/
         z-index: 2;
     }
 
     .category--tablet {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         padding: 20px;
     }
 
     .category__list {
-        width: calc(100%/2);
+        width: calc(100% / 2);
         margin: 0;
         padding-left: 0;
     }
@@ -372,7 +410,7 @@
     }
 
     .catalog__item {
-        width: calc(100%/2);
+        width: calc(100% / 2);
     }
 
     .catalog__btn {
