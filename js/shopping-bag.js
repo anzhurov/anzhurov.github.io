@@ -32,7 +32,7 @@ function displayMessageIfBagIsEmpty() {
 
 function createProductElement(productItem) {
     let productElement = document.createElement("div");
-    let productId = document.createElement("span")
+    let productId = document.createElement("span");
     let productImageWrapper = document.createElement("div");
     let productImage = document.createElement("img");
     let productViewBlock = document.createElement("div");
