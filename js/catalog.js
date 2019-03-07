@@ -68,7 +68,8 @@ function createProductElement(productItem) {
         let percentRegexp = "-\\d+%";
         if (!additionalInfo.match(percentRegexp)) {
             let additionalInfoElement = document.createElement("span");
-            additionalInfoElement.classList.add("catalog__additive__info__text", "text__color--gray");
+            additionalInfoElement.classList.add("catalog__additive__info__text");
+            additionalInfoElement.classList.add("text__color--gray");
             additionalInfoElement.innerHTML = additionalInfo;
 
             productPriceElement.appendChild(additionalInfoElement);

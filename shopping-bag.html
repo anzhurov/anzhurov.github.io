@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/shopping_bag.css">
     <script src="js/common.js" defer></script>
-    <script src="js/shopping-bag.js" defer></script>
+    <script src="js/shopping-bag-container.js" defer></script>
 </head>
 <body>
 <header id="header">
@@ -108,8 +108,8 @@
         </div>
         <div class="content-wrapper">
             <div id="shopping__state">
-                <p class="shopping__state__empty">Empty bag</p>
-                <button class="shopping__btn">Buy now</button>
+                <p id="shopping__state__empty">Empty bag</p>
+                <button id="shopping__btn">Buy now</button>
                 <div class="shopping__state__total">
                     <p class="shopping__state__total__title">Total cost</p>
                     <h4 id="shopping__state__total__price">£1 640.50</h4>
@@ -172,7 +172,7 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="site-map__section--right__row tablet__view left">
+                <div class="site-map__section--right__row tablet__view mobile__hidden mobile__hidden left">
                     <div class="site-map__section--right__questions">
                         <h3 class="site-map__section__headline">Questions</h3>
                         <img class="site-map__section__icon" src="./img/icons/twi_ico.png" alt="Twitter icon">

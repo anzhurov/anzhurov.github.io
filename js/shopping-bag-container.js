@@ -1,27 +1,31 @@
-var shoppingBag = document.getElementById("shopping__bag__wrapper");
+var shoppingBagContainer = document.getElementById("shopping__bag__wrapper");
 var totalCost = document.getElementById("shopping__state__total__price");
+var bagEmptyMessageText = document.getElementById("empty__message__wrapper");
 var productObjects = getProductsFromStorage();
-initProductContainer(productObjects, shoppingBag);
+initProductContainer(productObjects, shoppingBagContainer);
 initTotalCostElement();
-var productItems = document.querySelectorAll(".shopping__bag__item");
+var productItems = document.querySelectorAll(".shopping__item__image__wrapper");
+var buyButton = document.getElementById("shopping__btn");
+var removeItemButtons = document.querySelectorAll(".shopping__item__btn");
+var clearBagButton = document.getElementById("shopping__state__empty");
 
 function getProductsFromStorage() {
     let products = [];
-
+    displayMessageIfBagIsEmpty();
     for (let i = 0; i < storage.length; i++) {
         let product = JSON.parse(storage.key(i));
         products.push(product);
     }
-
     return products;
 }
 
-function ifEmpty() {
-    let emptyMessageText = document.getElementById("empty__message__wrapper");
+function displayMessageIfBagIsEmpty() {
     let shoppingInfo = document.getElementById("shopping__state");
-    let productObjects = getProductsFromStorage();
-    if (productObjects != null) {
-        emptyMessageText.style.display = "none";
+    if (!storage.length) {
+        bagEmptyMessageText.style.display = "flex";
+        shoppingInfo.style.display = "none";
+    } else {
+        bagEmptyMessageText.style.display = "none";
         shoppingInfo.style.display = "flex";
     }
 }
@@ -108,7 +112,51 @@ function initTotalCostElement() {
 
 for (let i = 0; i < productItems.length; i++) {
     productItems[i].onclick = function () {
-        let productID = productItems[i].firstChild;
+        let productID = productItems[i].parentNode.firstElementChild;
         location.href = "item.html" + "?id=" + productID.innerHTML;
     };
 }
+
+for (let i = 0; i < removeItemButtons.length; i++) {
+    removeItemButtons[i].onclick = function (event) {
+        let target = event.target;
+        let productContainer = target.parentNode.parentNode;
+        let productID = target.parentNode.parentNode.childNodes[0].innerHTML;
+        let productInfoQuantity = target.previousSibling.childNodes[2];
+        let targetObject = productObjects.filter(item => item.id == productID);
+        let quantityInStorage = storage.getItem(JSON.stringify(targetObject[0]));
+
+        if (checkIfProductIsInStore()) {
+            storage.setItem(JSON.stringify(targetObject[0]), --quantityInStorage);
+            productInfoQuantity.innerHTML = "Quantity: " + getCountOfProduct(JSON.stringify(targetObject[0]));
+        } else {
+            storage.removeItem(JSON.stringify(targetObject[0]));
+            productContainer.remove();
+        }
+        if (!getProductsFromStorage()) {
+            displayMessageIfBagIsEmpty();
+        }
+
+        initTotalCostElement();
+        setShoppingBagContent();
+
+        function checkIfProductIsInStore() {
+            return parseInt(quantityInStorage) > 1;
+        }
+    };
+}
+
+clearBagButton.onclick = function () {
+    storage.clear();
+    shoppingBagContainer.innerHTML = "";
+    setShoppingBagContent();
+    displayMessageIfBagIsEmpty();
+};
+
+buyButton.onclick = function () {
+    storage.clear();
+    shoppingBagContainer.innerHTML = "";
+    bagEmptyMessageText.firstElementChild.innerHTML = "Thank you for your purchase!";
+    setShoppingBagContent();
+    displayMessageIfBagIsEmpty();
+};
