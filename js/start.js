@@ -10,6 +10,7 @@ var timerId = initSliderTimer();
 
 var productObjects = initProductArray();
 var arrivalObjects = [productObjects[2], productObjects[14], productObjects[10], productObjects[1]];
+addObjectsToContainer(arrivalObjects, arrivalsContent);
 var arrivalsElements = document.querySelectorAll(".arrivals__item");
 
 function showNextSlide() {
@@ -133,7 +134,6 @@ function addMainContentDelegatedListener() {
     };
 }
 
-addObjectsToContainer(arrivalObjects, arrivalsContent);
 addMainContentDelegatedListener();
 
 

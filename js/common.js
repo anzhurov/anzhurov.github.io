@@ -39,7 +39,7 @@ function getTotalCostOfProductsFromBag() {
         let product = JSON.parse(key);
         price += parseFloat(product.price.slice(1)) * parseInt(value);
     }
-    return price;
+    return Math.round(price * 100) / 100;
 }
 
 function getCountOfProduct(product) {
