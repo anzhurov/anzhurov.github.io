@@ -799,7 +799,7 @@ header {
 
 }
 
-@media only screen and (min-width: 375px) and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
     .tablet__view {
         display: block !important;
     }
