@@ -101,11 +101,15 @@ function slidesSwipe() {
 
     var xStartCoordinate = null;
     var yStartCoordinate = null;
+    var scrolled = false;
 
     function handleTouchStart(event) {
         const firstTouch = event.touches[0];
         xStartCoordinate = firstTouch.clientX;
         yStartCoordinate = firstTouch.clientY;
+        window.onscroll = function() {
+            scrolled = true;
+        }
     }
 
     function handleTouchEnd(event) {
@@ -119,21 +123,23 @@ function slidesSwipe() {
         var xDifference = xStartCoordinate - xEndCoordinate;
         var yDifference = yStartCoordinate - yEndCoordinate;
 
-        console.log(xDifference);
-        console.log(yDifference);
 
-        if (xDifference > 0) {
-            clearInterval(timerId);
-            showPreviousSlide();
-            timerId = initSliderTimer();
-        } else {
-            clearInterval(timerId);
-            showNextSlide();
-            timerId = initSliderTimer();
+        if (!scrolled) {
+            if (xDifference > 0) {
+                clearInterval(timerId);
+                showPreviousSlide();
+                timerId = initSliderTimer();
+            } else {
+                clearInterval(timerId);
+                showNextSlide();
+                timerId = initSliderTimer();
+            }
         }
 
         xStartCoordinate = null;
         yStartCoordinate = null;
+        window.onscroll = null;
+        scrolled = false;
     }
 }
 
