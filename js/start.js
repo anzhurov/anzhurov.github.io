@@ -94,59 +94,46 @@ function createProductElement(productItem) {
 }
 
 function slidesSwipe() {
-
     for (let i = 0; i < slides.length; i++) {
         slides[i].addEventListener("touchstart", handleTouchStart);
-        slides[i].addEventListener("touchmove", handleTouchMove);
+        slides[i].addEventListener("touchend", handleTouchEnd);
     }
 
-    var xDown = null;
-    var yDown = null;
-
-    function getTouches(evt) {
-        return evt.touches;
-    }
+    var xStartCoordinate = null;
+    var yStartCoordinate = null;
 
     function handleTouchStart(event) {
-        const firstTouch = getTouches(event)[0];
-        xDown = firstTouch.clientX;
-        yDown = firstTouch.clientY;
+        const firstTouch = event.touches[0];
+        xStartCoordinate = firstTouch.clientX;
+        yStartCoordinate = firstTouch.clientY;
     }
 
-    function handleTouchMove(evt) {
-        if (!xDown || !yDown) {
+    function handleTouchEnd(event) {
+        if (!xStartCoordinate || !yStartCoordinate) {
             return;
         }
 
-        var xUp = evt.touches[0].clientX;
-        var yUp = evt.touches[0].clientY;
+        var xEndCoordinate = event.changedTouches[0].clientX;
+        var yEndCoordinate = event.changedTouches[0].clientY;
 
-        var xDiff = xDown - xUp;
-        var yDiff = yDown - yUp;
+        var xDifference = xStartCoordinate - xEndCoordinate;
+        var yDifference = yStartCoordinate - yEndCoordinate;
 
-        if (Math.abs(xDiff) > Math.abs(yDiff)) {
-            if (xDiff > 0) {
-                clearInterval(timerId);
-                showPreviousSlide();
-                timerId = initSliderTimer();
-                return;
-            } else {
-                clearInterval(timerId);
-                showNextSlide();
-                timerId = initSliderTimer();
-                return;
-            }
+        console.log(xDifference);
+        console.log(yDifference);
+
+        if (xDifference > 0) {
+            clearInterval(timerId);
+            showPreviousSlide();
+            timerId = initSliderTimer();
         } else {
-            if (yDiff > 0) {
-                console.log("up");
-
-            } else {
-                console.log("down");
-
-            }
+            clearInterval(timerId);
+            showNextSlide();
+            timerId = initSliderTimer();
         }
-        xDown = null;
-        yDown = null;
+
+        xStartCoordinate = null;
+        yStartCoordinate = null;
     }
 }
 
@@ -154,13 +141,6 @@ function addMainContentDelegatedListener() {
     mainContent.onclick = function (event) {
         let target = event.target;
         while (target !== mainContent) {
-            if (target === slides) {
-                var xDown = null;
-                var yDown = null;
-                handleTouchStart();
-                handleTouchMove();
-                return;
-            }
             if (target === arrowLeft) {
                 clearInterval(timerId);
                 showPreviousSlide();
