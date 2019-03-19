@@ -2,6 +2,7 @@ var storage = localStorage;
 
 var burgerMenuButton = document.querySelector(".mobile-menu");
 var mobileMenuElement = document.getElementById("menu__mobile");
+var mob = document.querySelector(".mobile-menu__wrapper");
 var bagTotalPriceElement = document.getElementById("shopping-bag__total-price");
 var bagTotalCount = document.getElementById("shopping-bag__total-count");
 
@@ -71,6 +72,11 @@ function Product(id, title, price, color, size, fashion, productType, brand, ima
 
 function addMenuButtonListener() {
     burgerMenuButton.onclick = function () {
+        if (mob.classList.contains("open")) {
+            mob.classList.remove("open");
+        } else {
+            mob.classList.add("open");
+        }
         mobileMenuElement.style.display = (mobileMenuElement.style.display === 'block') ? 'none' : 'block';
     };
 }
