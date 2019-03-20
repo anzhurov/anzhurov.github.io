@@ -1,5 +1,6 @@
 var filterPanel = document.getElementById("filter");
 var filterValuesDesktop = document.querySelectorAll(".filter__button__dropdown");
+var filterTitlesTablet = document.querySelectorAll(".filter__button--tablet");
 var filterValuesTablet = document.querySelectorAll(".category__item");
 var filterContainerTablet = document.getElementById("category--tablet");
 var catalogTopLineBlock = document.getElementById("catalog__items__wrapper--top");
@@ -14,6 +15,14 @@ var objectFieldMap = {
     "Size": "size",
     "Price rang": "price"
 };
+var filterMap = new Map([
+    ["Fashion", "Fashion"],
+    ["Product type", "Product type"],
+    ["Color", "Color"],
+    ["Brand", "Brand"],
+    ["Size", "Size"],
+    ["Price rang", "Price rang"]
+]);
 
 function createProductElement(productObject) {
     let productElement = document.createElement("figure");
@@ -218,12 +227,48 @@ var onClickFilterFunction = function (item) {
         let selectedFilterValueElement = target.parentElement.parentElement.children[0].children[1];
         let filterTitle = target.parentElement.parentElement.children[0].children[0].innerText;
 
+        let filterBarTextColor;
+
         if (selectedFilterValue === "Not selected") {
+            filterBarTextColor = "#000";
             delete selectedFilterValues[filterTitle];
             selectedFilterValueElement.innerText = "";
+            setNewFilterValueToMap(filterTitle, filterTitle);
+            reInitFilterBar(filterMap, filterTitlesTablet);
+            changeFilterBarTextColor(filterTitle, filterBarTextColor);
         } else {
+            filterBarTextColor = "#f14a58";
             selectedFilterValueElement.innerText = selectedFilterValue;
             selectedFilterValues[filterTitle] = selectedFilterValue;
+            setNewFilterValueToMap(filterTitle, selectedFilterValue);
+            reInitFilterBar(filterMap, filterTitlesTablet);
+            changeFilterBarTextColor(selectedFilterValue, filterBarTextColor);
+        }
+
+        function setNewFilterValueToMap(filterTitle, selectedFilterValue) {
+            filterMap.forEach(function (value, key, map) {
+                if (filterTitle == key) {
+                    map.set(key, selectedFilterValue);
+                }
+            });
+        }
+
+        function reInitFilterBar (filterMap, filterTitlesTablet) {
+            let i = 0;
+            for (let key of filterMap.keys()) {
+                for (let j = i; j < i+1; j++) {
+                    filterTitlesTablet[j].children[0].innerText = filterMap.get(key) + ",";
+                }
+                i++;
+            }
+        }
+
+        function changeFilterBarTextColor(filterTitle, color) {
+            filterTitlesTablet.forEach(function (item) {
+                if (item.children[0].innerText.indexOf(filterTitle) != -1) {
+                    item.children[0].style.color = color;
+                }
+            })
         }
 
         let filteredProducts = filterProductElements(productObjects, selectedFilterValues);
