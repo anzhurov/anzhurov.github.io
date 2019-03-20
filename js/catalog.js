@@ -13,7 +13,7 @@ var objectFieldMap = {
     "Color": "color",
     "Brand": "brand",
     "Size": "size",
-    "Price rang": "price"
+    "Price range": "price"
 };
 var filterMap = new Map([
     ["Fashion", "Fashion"],
@@ -21,7 +21,7 @@ var filterMap = new Map([
     ["Color", "Color"],
     ["Brand", "Brand"],
     ["Size", "Size"],
-    ["Price rang", "Price rang"]
+    ["Price range", "Price range"]
 ]);
 
 function createProductElement(productObject) {
