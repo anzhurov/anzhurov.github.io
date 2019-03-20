@@ -209,11 +209,13 @@ filterPanel.onclick = function () {
 
 function addGlassIconListener() {
     glassIcon.onclick = function () {
-        let search__input = glassIcon.previousElementSibling;
-        if (!search__input.style.display || search__input.style.display === "none") {
-            search__input.style.display = "block";
-        } else {
-            search__input.style.display = "none";
+        if (window.matchMedia("(max-width: 1023px)").matches) {
+            let search__input = glassIcon.previousElementSibling;
+            if (!search__input.style.display || search__input.style.display === "none") {
+                search__input.style.display = "block";
+            } else {
+                search__input.style.display = "none";
+            }
         }
     };
 }
@@ -238,7 +240,9 @@ var onClickFilterFunction = function (item) {
             changeFilterBarTextColor(filterTitle, filterBarTextColor);
         } else {
             filterBarTextColor = "#f14a58";
-            selectedFilterValueElement.innerText = selectedFilterValue;
+            if (window.matchMedia("(min-width: 1024px)").matches) {
+                selectedFilterValueElement.innerText = selectedFilterValue;
+            }
             selectedFilterValues[filterTitle] = selectedFilterValue;
             setNewFilterValueToMap(filterTitle, selectedFilterValue);
             reInitFilterBar(filterMap, filterTitlesTablet);
@@ -253,10 +257,10 @@ var onClickFilterFunction = function (item) {
             });
         }
 
-        function reInitFilterBar (filterMap, filterTitlesTablet) {
+        function reInitFilterBar(filterMap, filterTitlesTablet) {
             let i = 0;
             for (let key of filterMap.keys()) {
-                for (let j = i; j < i+1; j++) {
+                for (let j = i; j < i + 1; j++) {
                     filterTitlesTablet[j].children[0].innerText = filterMap.get(key) + ",";
                 }
                 i++;
