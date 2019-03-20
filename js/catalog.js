@@ -17,7 +17,7 @@ var objectFieldMap = {
 };
 var filterMap = new Map();
 
-function initFilterMap() {
+function initFilterMap(filterMap) {
     filterMap.set("Fashion", "Fashion");
     filterMap.set("Product type", "Product type");
     filterMap.set("Color", "Color");
@@ -265,7 +265,7 @@ var onClickFilterFunction = function (item) {
             let i = 0;
             filterMap.forEach(function (value, key, map) {
                 for (let j = i; j < i + 1; j++) {
-                    filterTitlesTablet[j].children[0].innerText = map.get(key) + ",";
+                    filterTitlesTablet[j].children[0].innerText = map.get(key);
                 }
                 i++;
             })
@@ -292,7 +292,7 @@ var topProducts = productObjects.slice(0, 4);
 var bottomProducts = productObjects.slice(4, 14);
 addObjectsToContainer(topProducts, catalogTopLineBlock);
 addObjectsToContainer(bottomProducts, catalogBottomLineBlock);
-initFilterMap();
+initFilterMap(filterMap);
 initFilterValuesListeners(filterValuesTablet);
 initFilterValuesListeners(filterValuesDesktop);
 
