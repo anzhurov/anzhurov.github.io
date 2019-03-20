@@ -15,14 +15,16 @@ var objectFieldMap = {
     "Size": "size",
     "Price range": "price"
 };
-var filterMap = new Map([
-    ["Fashion", "Fashion"],
-    ["Product type", "Product type"],
-    ["Color", "Color"],
-    ["Brand", "Brand"],
-    ["Size", "Size"],
-    ["Price range", "Price range"]
-]);
+var filterMap = new Map();
+
+function initFilterMap() {
+    filterMap.set("Fashion", "Fashion");
+    filterMap.set("Product type", "Product type");
+    filterMap.set("Color", "Color");
+    filterMap.set("Brand", "Brand");
+    filterMap.set("Size", "Size");
+    filterMap.set("Price range", "Price range");
+}
 
 function createProductElement(productObject) {
     let productElement = document.createElement("figure");
@@ -201,9 +203,11 @@ function initProductItemsListeners() {
 
 filterPanel.onclick = function () {
     if (filterContainerTablet.classList.contains("tablet__hidden")) {
-        filterContainerTablet.classList.replace("tablet__hidden", "tablet__view");
+        filterContainerTablet.classList.remove("tablet__hidden");
+        filterContainerTablet.classList.add("tablet__view");
     } else {
-        filterContainerTablet.classList.replace("tablet__view", "tablet__hidden");
+        filterContainerTablet.classList.remove("tablet__view");
+        filterContainerTablet.classList.add("tablet__hidden");
     }
 };
 
@@ -259,20 +263,20 @@ var onClickFilterFunction = function (item) {
 
         function reInitFilterBar(filterMap, filterTitlesTablet) {
             let i = 0;
-            for (let key of filterMap.keys()) {
+            filterMap.forEach(function (value, key, map) {
                 for (let j = i; j < i + 1; j++) {
-                    filterTitlesTablet[j].children[0].innerText = filterMap.get(key) + ",";
+                    filterTitlesTablet[j].children[0].innerText = map.get(key) + ",";
                 }
                 i++;
-            }
+            })
         }
 
         function changeFilterBarTextColor(filterTitle, color) {
-            filterTitlesTablet.forEach(function (item) {
-                if (item.children[0].innerText.indexOf(filterTitle) != -1) {
-                    item.children[0].style.color = color;
+            for (let i = 0; i < filterTitlesTablet.length; i++) {
+                if (filterTitlesTablet[i].children[0].innerText.indexOf(filterTitle) != -1) {
+                    filterTitlesTablet[i].children[0].style.color = color;
                 }
-            })
+            }
         }
 
         let filteredProducts = filterProductElements(productObjects, selectedFilterValues);
@@ -288,6 +292,7 @@ var topProducts = productObjects.slice(0, 4);
 var bottomProducts = productObjects.slice(4, 14);
 addObjectsToContainer(topProducts, catalogTopLineBlock);
 addObjectsToContainer(bottomProducts, catalogBottomLineBlock);
+initFilterMap();
 initFilterValuesListeners(filterValuesTablet);
 initFilterValuesListeners(filterValuesDesktop);
 
