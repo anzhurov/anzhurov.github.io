@@ -1,0 +1,73 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    -webkit-user-select: none;
+}
+
+.container {
+    margin: 0 auto;
+    width: 66.66666%;
+    text-align: center;
+    padding-top: 270px;
+}
+
+.code-info {
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 75px;
+    width: 100vw;
+}
+
+h1.code {
+    font-size: 72px;
+    /* padding-bottom: 120px; */
+}
+
+h2.code-description {
+    font-size: 32px;
+}
+
+.next-btn {
+    width: 230px;
+    height: 54px;
+    border: none;
+    background: #8D5CCC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 19px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 44px;
+}
+
+.next-btn:active {
+    background: rgb(106, 44, 187);
+    box-shadow: none;
+}
+
+.uls {
+    padding-left: 50px;
+}
+
+.code-options1 {
+    float: left;
+}
+
+.code-option>input[type="checkbox"] {
+    background-color: transparent;
+    -webkit-transform: scale(1.5, 1.5);
+    margin-bottom: 10px;
+}
+
+.code-option>label {
+    padding-left: 7px;
+    font-size: 20px;
+}
+
+.created-by {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 14px;
+    color: #BCBCBC;
+}
