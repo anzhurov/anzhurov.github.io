@@ -2,7 +2,7 @@ var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 if (width > 400) {
     $('.code-info').remove();
     $('.container').remove();
-    $('body').append("<p style='position: absolute; top:50%; left:50%'>Your device is not supported</p>");
+    $('body').append("<p style='position: absolute; top:50%; left:50%; transform: translate(-50%)'>Your device is not supported</p>");
 }
 
 $('.next-btn').on('click', function () {
